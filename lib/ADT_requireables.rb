@@ -1,0 +1,6 @@
+require_relative 'zadt/AbstractDataTypes/ADT.rb'
+require_relative 'zadt/AbstractDataTypes/Stack.rb'
+require_relative 'zadt/AbstractDataTypes/Queue.rb'
+require_relative 'zadt/AbstractDataTypes/StackQueue.rb'
+require_relative 'zadt/AbstractDataTypes/MinMaxStack.rb'
+require_relative 'zadt/AbstractDataTypes/MinMaxStackQueue.rb'
