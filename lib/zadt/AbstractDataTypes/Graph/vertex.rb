@@ -9,6 +9,28 @@ module Zadt
       @connections = []
     end
 
+    def self.help
+      puts "Here are the functions for Vertex:"
+      puts "#connect(other_vertex)"
+      puts "#is_connected?(other_vertex)"
+      puts "#make_connection(v1,v2)"
+      puts "#break_connection(v1,v2)"
+      puts "#find_connection(v1,v2)"
+      puts "#is_connected?(v1,v2)"
+    end
+
+    def self.methods
+      self.help
+    end
+
+    def help
+      self.help
+    end
+
+    def methods
+      help
+    end
+
     # Make an edge between this vertex and another
     def connect(other_vertex)
       return nil if !other_vertex
@@ -28,15 +50,17 @@ module Zadt
       @connections.include?(other_vertex)
     end
 
+    def inspect
+      "Vertex"
+    end
+
     # Used to store connection info in the second vertex
     #  involved in a connection
+    private
     def store_connection_info(vertex, edge)
       @edges << edge
       @connections << vertex
     end
 
-    def inspect
-      "Vertex"
-    end
   end
 end

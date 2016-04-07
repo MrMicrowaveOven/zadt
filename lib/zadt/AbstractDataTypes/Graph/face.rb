@@ -12,6 +12,24 @@ module Zadt
       @neighbor_id = @neighboring_faces.length
     end
 
+    def self.help
+      puts "Here are the functions for Face:"
+      puts "#add_neighbor(face)"
+      puts "#remove_neighbor(neighbor)"
+    end
+
+    def self.methods
+      self.help
+    end
+
+    def help
+      self.help
+    end
+
+    def methods
+      help
+    end
+
     def add_neighbor(face)
       # face_info is a catalog of information about the face's neighbor
       # It has three properties: face, which is the neighbor face itself,
@@ -34,6 +52,16 @@ module Zadt
       @neighboring_faces.delete(id_of_neighbor)
     end
 
+
+    def inspect
+      output = "This face contains the following vertices:"
+      output += @vertices.to_s
+      output = "This face contains the following edges:"
+      output += @edges.to_s
+      output
+    end
+
+    private
     def ensure_cyclic(vertices)
       connect_testers = vertices.dup
       connected_vertices = []
@@ -52,14 +80,5 @@ module Zadt
       end
       connected_vertices
     end
-
-    def inspect
-      output = "This face contains the following vertices:"
-      output += @vertices.to_s
-      output = "This face contains the following edges:"
-      output += @edges.to_s
-      output
-    end
-
   end
 end

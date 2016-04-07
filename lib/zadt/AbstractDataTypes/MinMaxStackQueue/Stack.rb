@@ -6,11 +6,11 @@ module Zadt
 
     def self.help
       puts "Here are the functions for Stack:"
-      puts "show"
-      puts "push(value)"
-      puts "pop"
-      puts "length"
-      puts "empty?"
+      puts "#show"
+      puts "#push(value)"
+      puts "#pop"
+      puts "#length"
+      puts "#empty?"
     end
 
     def self.methods

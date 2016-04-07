@@ -12,13 +12,13 @@ module Zadt
 
     def self.help
       puts "Here are the functions for MinMaxStackQueue:"
-      puts "show"
-      puts "enqueue(value)"
-      puts "dequeue"
-      puts "min"
-      puts "max"
-      puts "length"
-      puts "empty?"
+      puts "#show"
+      puts "#enqueue(value)"
+      puts "#dequeue"
+      puts "#min"
+      puts "#max"
+      puts "#length"
+      puts "#empty?"
     end
 
     def self.methods

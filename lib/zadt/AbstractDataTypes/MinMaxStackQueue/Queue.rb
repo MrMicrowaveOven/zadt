@@ -6,11 +6,11 @@ module Zadt
 
     def self.help
       puts "Here are the functions for Queue:"
-      puts "show"
-      puts "enqueue(value)"
-      puts "dequeue"
-      puts "length"
-      puts "empty?"
+      puts "#show"
+      puts "#enqueue(value)"
+      puts "#dequeue"
+      puts "#length"
+      puts "#empty?"
     end
 
     def self.methods

@@ -12,6 +12,28 @@ module Zadt
       @edges = []
     end
 
+    def self.help
+      puts "Here are the functions for Graph:"
+      puts "#add_vertex"
+      puts "#remove_vertex(vertex)"
+      puts "#make_connection(v1,v2)"
+      puts "#break_connection(v1,v2)"
+      puts "#find_connection(v1,v2)"
+      puts "#is_connected?(v1,v2)"
+    end
+
+    def self.methods
+      self.help
+    end
+
+    def help
+      self.help
+    end
+
+    def methods
+      help
+    end
+
     # Add a vertex
     def add_vertex
       vertex = Vertex.new

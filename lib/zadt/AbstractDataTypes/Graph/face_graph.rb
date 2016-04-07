@@ -11,6 +11,37 @@ module Zadt
       super
     end
 
+    def self.help
+      puts "Here are the functions for FaceGraph:"
+      puts "#add_face(edges_array)"
+      puts "#make_original_face(num_edges)"
+      puts "#add_attached_face(vertex_array, num_edges)"
+      puts "#add_attached_face(vertex_array, num_edges)"
+      puts "#find_neighbors(vertex_array)"
+      puts "#make_vertex_line(vertex_array)"
+      puts "#make_neighbors(face1, face2)"
+      puts "#remove_neighbors(face1, face2)"
+      puts "FaceGraph also inherits the following functions from Graph:"
+      puts "#add_vertex"
+      puts "#remove_vertex(vertex)"
+      puts "#make_connection(v1,v2)"
+      puts "#break_connection(v1,v2)"
+      puts "#find_connection(v1,v2)"
+      puts "#is_connected?(v1,v2)"
+    end
+
+    def self.methods
+      self.help
+    end
+
+    def help
+      self.help
+    end
+
+    def methods
+      help
+    end
+
     def add_face(edges_array)
       face = Face.new(edges_array)
       @faces << face
