@@ -56,7 +56,7 @@ module Zadt
 
     # Used to store connection info in the second vertex
     #  involved in a connection
-    private
+    # Must needs be public, since it's called by a different vertex
     def store_connection_info(vertex, edge)
       @edges << edge
       @connections << vertex
