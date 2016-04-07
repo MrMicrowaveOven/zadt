@@ -30,6 +30,12 @@ A MinMaxStackQueue is an Queue object that allows the minimum and maximum values
 
 Since it is made out of Queues and Stacks, those data types are also available.  I also provided StackQueue (functionally the same as a Queue), and a MinMaxStack, which is a Stack version of MinMaxStackQueue.
 
+### Graph
+
+A Graph is a data type that consists of Vertices, which are connected by Edges.  In addition, a FaceGraph is a Graph which also consists of Faces: the space defined inside a set of cyclic edges.
+
+I'm still working on the exact functionality of FaceGraph, since I mainly built it to use for a different project, but it should still prove useful for certain situations.  If you have any suggestions of useful bits to add, feel free to contact me below!
+
 ## Development
 
 After checking out the repo, run `bin/setup` to install dependencies. Then, run `rake spec` to run the tests. You can also run `bin/console` for an interactive prompt that will allow you to experiment.
@@ -44,3 +50,7 @@ Bug reports and pull requests are welcome on GitHub at https://github.com/[USERN
 ## License
 
 The gem is available as open source under the terms of the [MIT License](http://opensource.org/licenses/MIT).
+
+## Contact
+
+This gem was written in its entirety by Benjamin Zagorski, who can be contacted at Benj@Zagorski.com.  Feel free to contact me with any questions or comments, as I'm very open to suggestions.

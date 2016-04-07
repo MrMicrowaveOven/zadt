@@ -10,7 +10,11 @@ Gem::Specification.new do |spec|
   spec.email         = ["benj@zagorski.com"]
 
   spec.summary       = %q{Zagorski ADT is a collection of advanced data types that are not included in the standard Ruby library.}
-  spec.description   = %q{Includes the following Advanced Data Types: Stack, Queue, StackQueue, MinMaxStack, and MinMaxStackQueue.  Once installed, type "Zadt::ADT::help" for a list of datatypes and basic functionality.}
+  spec.description   = %q{Includes two different categories of Advanced Data Types: Array-Based, and Graphs.
+    Array-Based Data Types include Stack, Queue, StackQueue, MinMaxStack, and MinMaxStackQueue.
+    Graph Data Types include Graph, Vertex, Edge, FaceGraph, and Face.
+    Once installed, type "Zadt::ADT::help" for a list of datatypes
+    and basic functionality.}
   spec.homepage      = "https://github.com/MrMicrowaveOven/zadt.git"
   spec.license       = "MIT"
 
