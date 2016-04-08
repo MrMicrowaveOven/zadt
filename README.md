@@ -24,6 +24,8 @@ zadt::ADT::help will return a list of objects in the collection, as well as a br
 
 I also made a "help" function for each Data Type.  Type zadt::StackQueue.help get a list of functions for the StackQueue, and so on.
 
+And don't forget to require 'zadt' at the top!
+
 ### MinMaxStackQueue
 
 A MinMaxStackQueue is an Queue object that allows the minimum and maximum values to be found in constant time.  It's built by making a Queue out of a Stack, which has that same min/max ability.
