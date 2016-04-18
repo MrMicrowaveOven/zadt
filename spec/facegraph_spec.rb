@@ -96,5 +96,13 @@ describe Zadt::FaceGraph do
       end
       expect(neighbors.include?(face)).to eq(true)
     end
+    it "connects each of its vertices" do
+      face = @facegraph.add_attached_face([@a, @b], 4)
+      expect(@facegraph.is_connected?(face.vertices[0], face.vertices[1])).to eq(true)
+      expect(@facegraph.is_connected?(face.vertices[1], face.vertices[2])).to eq(true)
+      expect(@facegraph.is_connected?(face.vertices[2], face.vertices[3])).to eq(true)
+      expect(@facegraph.is_connected?(face.vertices[3], face.vertices[0])).to eq(true)
+
+    end
   end
 end
