@@ -134,6 +134,14 @@ module Zadt
       neighbors.uniq
     end
 
+    # Return all neighbors of the given faces
+      # Neighbor is defined as sharing a vertex,
+      # not necessarily sharing an edge.
+    def find_face_neighbors(face)
+      neighbors = find_neighbors(face.vertices)
+      neighbors - face
+    end
+
     def make_vertex_line(vertex_array)
       connection_line = []
       connection_line << vertex_array.first
