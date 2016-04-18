@@ -77,7 +77,6 @@ module Zadt
     #   a vertex with the new face
     def add_attached_face(vertex_array, num_edges)
       # Make the vertices into a line
-      # p vertex_array
       vertex_line = make_vertex_line(vertex_array)
       # This finds the "ends" of the vertex line
       end_vertices = [vertex_line.first, vertex_line.last]
@@ -87,7 +86,6 @@ module Zadt
       vertices_to_make = num_edges - vertex_array.length
       edges_to_make = vertices_to_make + 1
 
-      vert_ref = []
       # Make new vertices
       vert_ref = Array.new(vertices_to_make) {Vertex.new}
 
@@ -98,10 +96,10 @@ module Zadt
         edge_ref << make_connection(vert_ref[vert_id], vert_ref[vert_id + 1])
       end
       # Connect "ends" of new vertices to "ends" of vertex line (making a circuit)
-        # Connect "first" of new vertices to "first end" of old ones
-        edge_ref << make_connection(vert_ref.first, end_vertices.first)
-        # Connect "last" of new vertices to "last end" of old ones
-        edge_ref << make_connection(vert_ref.last, end_vertices.last)
+      # Connect "first" of new vertices to "last end" of old ones
+      edge_ref << make_connection(vert_ref.first, end_vertices.last)
+      # Connect "last" of new vertices to "first end" of old ones
+      edge_ref << make_connection(vert_ref.last, end_vertices.first)
 
       # Add edges from vertex_line to edge_ref
       (vertex_line.length - 1).times do |vert_id|
