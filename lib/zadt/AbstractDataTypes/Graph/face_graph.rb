@@ -139,7 +139,7 @@ module Zadt
       # not necessarily sharing an edge.
     def find_face_neighbors(face)
       neighbors = find_neighbors(face.vertices)
-      neighbors - face
+      neighbors - [face]
     end
 
     def make_vertex_line(vertex_array)

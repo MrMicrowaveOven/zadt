@@ -72,6 +72,14 @@ describe Zadt::FaceGraph do
       expect(@facegraph.find_neighbors([])).to eq([])
     end
   end
+  describe "#find_face_neighbors" do
+    it "returns all neighbors of a face" do
+      expect(@facegraph.find_face_neighbors(@goodface1)).to match_array([@goodface2])
+    end
+    it "returns an empty array given an empty array" do
+      expect(@facegraph.find_neighbors([])).to eq([])
+    end
+  end
   describe "#add_attached_face" do
     it "makes an attached face" do
       face = @facegraph.add_attached_face([@a, @b], 4)
