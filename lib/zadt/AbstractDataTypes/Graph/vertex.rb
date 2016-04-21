@@ -1,4 +1,3 @@
-require_relative 'edge.rb'
 module Zadt
   class Vertex
     # Connected by
@@ -10,12 +9,12 @@ module Zadt
     # Contains
     attr_accessor :value
 
-    def initialize
+    def initialize(value = Hash.new)
       # List of edges attached to vertex
       @edges = []
       # List of vertices "connected" to this one
       @connections = []
-      @value = Hash.new
+      @value = value
     end
 
     def self.methods

@@ -3,13 +3,16 @@
 module Zadt
   class Face
     attr_reader :edges, :vertices, :neighboring_faces
-    def initialize(edges_array, neighboring_faces = {})
+    # Contains
+    attr_accessor :value
+    def initialize(edges_array, neighboring_faces = {}, value = Hash.new)
       raise "Not enough edges" if edges_array.length < 3
       @edges = edges_array
       vertices = edges_array.map{ |edge| edge.connection}.inject(:+).uniq
       @vertices = ensure_cyclic(vertices)
       @neighboring_faces = neighboring_faces
       @neighbor_id = @neighboring_faces.length
+      @value = value
     end
 
     # TODO: Neighbors shouldn't be stored in Face, as FaceGraph takes care of this

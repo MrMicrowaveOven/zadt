@@ -4,9 +4,9 @@ module Zadt
     attr_reader :connection
     # Contains
     attr_accessor :value
-    def initialize(v1, v2)
+    def initialize(v1, v2, value = Hash.new)
       @connection = [v1, v2]
-      @value = Hash.new
+      @value = value
     end
 
     def self.methods

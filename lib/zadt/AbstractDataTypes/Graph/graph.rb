@@ -1,5 +1,5 @@
 require_relative 'vertex.rb'
-
+require_relative 'edge.rb'
 module Zadt
   class Graph
     # Made up of
@@ -49,6 +49,7 @@ module Zadt
     def make_connection(v1, v2)
       raise "already connected" if is_connected?(v1, v2)
       # Connect the two using the vertex method "connect"
+
       edge = v1.connect(v2)
       # Add to edge catalog
       @edges << edge
