@@ -14,7 +14,7 @@ module Zadt
       puts "--Vertex, a 'spot' on the graph"
       puts "--Edge, connects two vertices"
       puts "-FaceGraph, a sub-class of Graph which includes Faces"
-      puts "--Face, a space surrounded by Edges.  Consists of Vertices and the Edges connecting them"
+      puts "--Face, a space surrounded by a cycle of Edges.  Consists of Vertices and the Edges connecting them"
       puts ""
       puts "Each data type also has a help function.  Type Zadt::Stack::help or Zadt::Stack::methods for a list of Stack methods, and so on for each data type."
     end

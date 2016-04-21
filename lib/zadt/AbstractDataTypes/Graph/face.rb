@@ -12,8 +12,10 @@ module Zadt
       @neighbor_id = @neighboring_faces.length
     end
 
+    # TODO: Neighbors shouldn't be stored in Face, as FaceGraph takes care of this
     def self.help
       puts "Here are the functions for Face:"
+
       puts "#add_neighbor(face)"
       puts "#remove_neighbor(neighbor)"
     end

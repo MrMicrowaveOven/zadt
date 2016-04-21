@@ -2,7 +2,14 @@ require_relative 'vertex.rb'
 
 module Zadt
   class Graph
-    attr_reader :vertices, :edges
+    # Made up of
+    attr_reader :vertices
+
+    # Which are connected by
+    attr_reader :edges
+
+    # Contains
+    attr_accessor :value
 
     #init_v allows for initial vertices (not generally used)
     def initialize
@@ -10,28 +17,11 @@ module Zadt
       @vertices = []
       #@edges is ALL edges on the graph
       @edges = []
-    end
-
-    def self.help
-      puts "Here are the functions for Graph:"
-      puts "#add_vertex"
-      puts "#remove_vertex(vertex)"
-      puts "#make_connection(v1,v2), adds an edge between two vertices"
-      puts "#break_connection(v1,v2)"
-      puts "#find_connection(v1,v2), returns edge connecting two given vertices"
-      puts "#is_connected?(v1,v2)"
+      @value = Hash.new
     end
 
     def self.methods
       self.help
-    end
-
-    def help
-      self.help
-    end
-
-    def methods
-      help
     end
 
     # Add a vertex
@@ -65,6 +55,17 @@ module Zadt
       edge
     end
 
+    # Find the edge connecting two vertices
+    def find_connection(v1, v2)
+      connection = v1.edges.select {|edge| edge.connection.include?(v2)}
+      connection.first
+    end
+
+    # Returns whether two vertices are connected
+    def is_connected?(v1, v2)
+      v1.connections.include?(v2)
+    end
+
     def break_connection(v1, v2)
       raise "First vertex does not exist" if !v1
       raise "Second vertex does not exist" if !v2
@@ -84,15 +85,22 @@ module Zadt
       end
     end
 
-    # Find the edge connecting two vertices
-    def find_connection(v1, v2)
-      connection = v1.edges.select {|edge| edge.connection.include?(v2)}
-      connection.first
+    def help
+      Graph.help
     end
 
-    # Returns whether two vertices are connected
-    def is_connected?(v1, v2)
-      v1.connections.include?(v2)
+    def methods
+      help
+    end
+
+    def self.help
+      puts "Here are the functions for Graph:"
+      puts "#add_vertex"
+      puts "#remove_vertex(vertex)"
+      puts "#make_connection(v1,v2), adds an edge between two vertices"
+      puts "#break_connection(v1,v2)"
+      puts "#find_connection(v1,v2), returns edge connecting two given vertices"
+      puts "#is_connected?(v1,v2)"
     end
   end
 end

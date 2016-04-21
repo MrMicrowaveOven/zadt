@@ -3,7 +3,12 @@ require_relative 'graph.rb'
 
 module Zadt
   class FaceGraph < Graph
+    # Made up of
     attr_reader :faces
+    #   in addition to its parent's :vertices and :edges
+
+    # Contains
+    # attr_accessor :value
 
     def initialize
       #@faces is ALL faces on the graph
@@ -11,35 +16,8 @@ module Zadt
       super
     end
 
-    def self.help
-      puts "Here are the functions for FaceGraph:"
-      puts "#add_face(edges_array), makes a face with the given edges (must be cyclicly connected)"
-      puts "#make_original_face(num_edges), which makes a standard disconnected face"
-      puts "#add_attached_face(vertex_array, num_edges), which adds a face connected to the vertex_array"
-      puts "#find_neighbors(vertex_array), lists all faces containing the given vertices"
-      puts "#find_face_neighbors(vertex_array), which finds all neighbors of the given face"
-      puts "--a neighbor of a face is defined as one that shares a vertex (not necessarily an edge)"
-      puts "#make_vertex_line(vertex_array), reorders a list of connected vertices by connection sequence"
-      puts ""
-      puts "FaceGraph also inherits the following functions from Graph:"
-      puts "#add_vertex"
-      puts "#remove_vertex(vertex)"
-      puts "#make_connection(v1,v2), adds an edge between two vertices"
-      puts "#break_connection(v1,v2)"
-      puts "#find_connection(v1,v2), returns edge connecting two given vertices"
-      puts "#is_connected?(v1,v2)"
-    end
-
     def self.methods
       self.help
-    end
-
-    def help
-      self.help
-    end
-
-    def methods
-      help
     end
 
     def add_face(edges_array)
@@ -142,6 +120,37 @@ module Zadt
       neighbors - [face]
     end
 
+    def help
+      FaceGraph.help
+    end
+
+    def methods
+      help
+    end
+
+
+
+    def self.help
+      puts "Here are the functions for FaceGraph:"
+      puts "#add_face(edges_array), makes a face with the given edges (must be cyclicly connected)"
+      puts "#make_original_face(num_edges), which makes a standard disconnected face"
+      puts "#add_attached_face(vertex_array, num_edges), which adds a face connected to the vertex_array"
+      puts "#find_neighbors(vertex_array), lists all faces containing the given vertices"
+      puts "#find_face_neighbors(vertex_array), which finds all neighbors of the given face"
+      puts "--a neighbor of a face is defined as one that shares a vertex (not necessarily an edge)"
+      puts "#make_vertex_line(vertex_array), reorders a list of connected vertices by connection sequence"
+      puts ""
+      puts "FaceGraph also inherits the following functions from Graph:"
+      puts "#add_vertex"
+      puts "#remove_vertex(vertex)"
+      puts "#make_connection(v1,v2), adds an edge between two vertices"
+      puts "#break_connection(v1,v2)"
+      puts "#find_connection(v1,v2), returns edge connecting two given vertices"
+      puts "#is_connected?(v1,v2)"
+    end
+
+  private
+
     def make_vertex_line(vertex_array)
       connection_line = []
       connection_line << vertex_array.first
@@ -158,7 +167,7 @@ module Zadt
       end
       connection_line
     end
-    private
+
     def make_neighbors(face1, face2)
       face1.add_neighbor(face2)
       face2.add_neighbor(face1)

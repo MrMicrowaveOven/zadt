@@ -1,39 +1,30 @@
 require_relative 'edge.rb'
 module Zadt
   class Vertex
-    attr_accessor :edges, :connections
+    # Connected by
+    attr_accessor :edges
+
+    # Connected with
+    attr_accessor :connections
+
+    # Contains
+    attr_accessor :value
+
     def initialize
       # List of edges attached to vertex
       @edges = []
       # List of vertices "connected" to this one
       @connections = []
-    end
-
-    def self.help
-      puts "Here are the functions for Vertex:"
-      puts "#connect(other_vertex)"
-      puts "#is_connected?(other_vertex)"
-      puts "#make_connection(v1,v2)"
-      puts "#break_connection(v1,v2)"
-      puts "#find_connection(v1,v2)"
-      puts "#is_connected?(v1,v2)"
+      @value = Hash.new
     end
 
     def self.methods
       self.help
     end
 
-    def help
-      self.help
-    end
-
-    def methods
-      help
-    end
-
     # Make an edge between this vertex and another
     def connect(other_vertex)
-      return nil if !other_vertex
+      return nil if !other_vertex.is_a?(Vertex) || other_vertex == self
       raise "already connected" if is_connected?(other_vertex)
 
       edge = Edge.new(self, other_vertex)
@@ -51,7 +42,8 @@ module Zadt
     end
 
     def inspect
-      "Vertex"
+      description = "Vertex"
+      description += ": empty" if @value.empty?
     end
 
     # Used to store connection info in the second vertex
@@ -62,5 +54,23 @@ module Zadt
       @connections << vertex
     end
 
+    def self.help
+      puts "Here are the functions for Vertex:"
+      puts "#connect(other_vertex)"
+      puts "#is_connected?(other_vertex)"
+      puts "#make_connection(v1,v2)"
+      puts "#break_connection(v1,v2)"
+      puts "#find_connection(v1,v2)"
+      puts "#is_connected?(v1,v2)"
+    end
+
+    def help
+      Vertex.methods
+    end
+
+    def methods
+      help
+    end
+    private
   end
 end

@@ -69,4 +69,17 @@ describe Zadt::Graph do
     end
   end
 
+  describe "#help_methods" do
+    before :each do
+
+    end
+    it "has valid help methods: #help and #methods" do
+      # Help shit here
+    end
+
+    it "has class help methods" do
+
+    end
+  end
+
 end

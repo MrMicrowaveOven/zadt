@@ -110,6 +110,17 @@ describe Zadt::FaceGraph do
       expect(@facegraph.is_connected?(face.vertices[1], face.vertices[2])).to eq(true)
       expect(@facegraph.is_connected?(face.vertices[2], face.vertices[3])).to eq(true)
       expect(@facegraph.is_connected?(face.vertices[3], face.vertices[0])).to eq(true)
+    end
+  end
+  describe "#help_methods" do
+    before :each do
+
+    end
+    it "has valid help methods: #help and #methods" do
+      # Help shit here
+    end
+
+    it "has class help methods" do
 
     end
   end
