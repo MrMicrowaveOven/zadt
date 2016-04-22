@@ -131,12 +131,12 @@ module Zadt
 
 
     def self.help
-      puts "Here are the functions for FaceGraph:"
+      puts "Here are the methods for FaceGraph:"
       puts "#add_face(edges_array), makes a face with the given edges (must be cyclicly connected)"
       puts "#make_original_face(num_edges), which makes a standard disconnected face"
       puts "#add_attached_face(vertex_array, num_edges), which adds a face connected to the vertex_array"
       puts "#find_neighbors(vertex_array), lists all faces containing the given vertices"
-      puts "#find_face_neighbors(vertex_array), which finds all neighbors of the given face"
+      puts "#find_face_neighbors(face), which finds all neighbors of the given face"
       puts "--a neighbor of a face is defined as one that shares a vertex (not necessarily an edge)"
       puts "#make_vertex_line(vertex_array), reorders a list of connected vertices by connection sequence"
       puts ""

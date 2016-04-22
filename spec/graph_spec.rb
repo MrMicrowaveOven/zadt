@@ -70,15 +70,14 @@ describe Zadt::Graph do
   end
 
   describe "#help_methods" do
-    before :each do
-
-    end
     it "has valid help methods: #help and #methods" do
-      # Help shit here
+      expect {@graph.methods}.to output(/Graph/).to_stdout
+      expect {@graph.help}.to output(/Graph/).to_stdout
     end
 
     it "has class help methods" do
-
+      expect {Zadt::Graph.methods}.to output(/Graph/).to_stdout
+      expect {Zadt::Graph.help}.to output(/Graph/).to_stdout
     end
   end
 

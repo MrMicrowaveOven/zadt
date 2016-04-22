@@ -1,30 +1,31 @@
 require_relative 'spec_helper.rb'
 
-describe Zadt::Face do
+describe Face do
 
   before :each do
-    @a = Zadt::Vertex.new
-    @b = Zadt::Vertex.new
-    @c = Zadt::Vertex.new
-    @A = @a.connect(@b)
-    @B = @b.connect(@c)
-    @C = @a.connect(@c)
-    @d = Zadt::Vertex.new
-    @D = @d.connect(@b)
-    @goodface1 = Zadt::Face.new([@B, @A, @C])
-    @e = Zadt::Vertex.new
-    @E = @e.connect(@a)
-    @F = @c.connect(@e)
-    @goodface2 = Zadt::Face.new([@C, @E, @F])
+    @graph = Zadt::Graph.new
+    @a = @graph.add_vertex
+    @b = @graph.add_vertex
+    @c = @graph.add_vertex
+    @A = @graph.make_connection(@a,@b)
+    @B = @graph.make_connection(@b,@c)
+    @C = @graph.make_connection(@a,@c)
+    @d = @graph.add_vertex
+    @D = @graph.make_connection(@d,@b)
+    @goodface1 = Face.new([@B, @A, @C])
+    @e = @graph.add_vertex
+    @E = @graph.make_connection(@e,@a)
+    @F = @graph.make_connection(@c,@e)
+    @goodface2 = Face.new([@C, @E, @F])
 
     # Disconnected face
-    @x = Zadt::Vertex.new
-    @y = Zadt::Vertex.new
-    @z = Zadt::Vertex.new
-    @X = @x.connect(@y)
-    @Y = @y.connect(@z)
-    @Z = @x.connect(@z)
-    @disface = Zadt::Face.new([@X, @Y, @Z])
+    @x = @graph.add_vertex
+    @y = @graph.add_vertex
+    @z = @graph.add_vertex
+    @X = @graph.make_connection(@x,@y)
+    @Y = @graph.make_connection(@y,@z)
+    @Z = @graph.make_connection(@x,@z)
+    @disface = Face.new([@X, @Y, @Z])
 
   end
 
@@ -36,7 +37,7 @@ describe Zadt::Face do
       expect(@goodface2.vertices).to match_array([@a, @e, @c])
     end
     it "raises error if edges aren't cyclic" do
-      expect {Zadt::Face.new([@D, @A, @B])}.to raise_error("Not cyclic edges")
+      expect {Face.new([@D, @A, @B])}.to raise_error("Not cyclic edges")
     end
   end
 

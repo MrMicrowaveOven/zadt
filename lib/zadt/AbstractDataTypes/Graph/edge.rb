@@ -1,4 +1,3 @@
-module Zadt
   class Edge
     # Made up of a
     attr_reader :connection
@@ -34,4 +33,3 @@ module Zadt
     private
 
   end
-end

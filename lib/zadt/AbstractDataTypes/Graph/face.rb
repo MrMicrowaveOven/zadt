@@ -1,6 +1,5 @@
 # require_relative 'vertex.rb'
 # require_relative 'edge.rb'
-module Zadt
   class Face
     attr_reader :edges, :vertices, :neighboring_faces
     # Contains
@@ -17,7 +16,7 @@ module Zadt
 
     # TODO: Neighbors shouldn't be stored in Face, as FaceGraph takes care of this
     def self.help
-      puts "Here are the functions for Face:"
+      puts "Here are the methods for Face:"
 
       puts "#add_neighbor(face)"
       puts "#remove_neighbor(neighbor)"
@@ -86,4 +85,3 @@ module Zadt
       connected_vertices
     end
   end
-end

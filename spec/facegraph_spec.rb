@@ -117,11 +117,13 @@ describe Zadt::FaceGraph do
 
     end
     it "has valid help methods: #help and #methods" do
-      # Help shit here
+      expect {@facegraph.methods}.to output(/Graph/).to_stdout
+      expect {@facegraph.help}.to output(/Graph/).to_stdout
     end
 
     it "has class help methods" do
-
+      expect {Zadt::FaceGraph.methods}.to output(/Graph/).to_stdout
+      expect {Zadt::FaceGraph.help}.to output(/Graph/).to_stdout
     end
   end
 end

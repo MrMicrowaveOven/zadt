@@ -1,4 +1,4 @@
-module Zadt
+
   class Vertex
     # Connected by
     attr_accessor :edges
@@ -22,16 +22,12 @@ module Zadt
     end
 
     # Make an edge between this vertex and another
-    def connect(other_vertex)
+    def connect(other_vertex, edge)
       return nil if !other_vertex.is_a?(Vertex) || other_vertex == self
       raise "already connected" if is_connected?(other_vertex)
-
-      edge = Edge.new(self, other_vertex)
       # Store connection info in this vertex
       @edges << edge
       @connections << other_vertex
-      # Store connection info in other vertex
-      other_vertex.store_connection_info(self, edge)
       edge
     end
 
@@ -45,16 +41,8 @@ module Zadt
       description += ": empty" if @value.empty?
     end
 
-    # Used to store connection info in the second vertex
-    #  involved in a connection
-    # Must needs be public, since it's called by a different vertex
-    def store_connection_info(vertex, edge)
-      @edges << edge
-      @connections << vertex
-    end
-
     def self.help
-      puts "Here are the functions for Vertex:"
+      puts "Here are the methods for Vertex:"
       puts "#connect(other_vertex)"
       puts "#is_connected?(other_vertex)"
       puts "#make_connection(v1,v2)"
@@ -72,4 +60,3 @@ module Zadt
     end
     private
   end
-end

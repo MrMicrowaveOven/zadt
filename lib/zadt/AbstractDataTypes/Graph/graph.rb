@@ -21,7 +21,7 @@ module Zadt
     end
 
     def self.methods
-      self.help
+      Graph.help
     end
 
     # Add a vertex
@@ -48,9 +48,12 @@ module Zadt
     # Make an edge between two vertices
     def make_connection(v1, v2)
       raise "already connected" if is_connected?(v1, v2)
+      # Make new edge
+      edge = Edge.new(v1, v2)
       # Connect the two using the vertex method "connect"
+      v1.connect(v2, edge)
+      v2.connect(v1, edge)
 
-      edge = v1.connect(v2)
       # Add to edge catalog
       @edges << edge
       edge
@@ -95,7 +98,13 @@ module Zadt
     end
 
     def self.help
-      puts "Here are the functions for Graph:"
+      Graph.show_help_message
+    end
+
+    private
+
+    def self.show_help_message
+      puts "Here are the methods for Graph:"
       puts "#add_vertex"
       puts "#remove_vertex(vertex)"
       puts "#make_connection(v1,v2), adds an edge between two vertices"
