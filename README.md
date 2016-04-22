@@ -42,24 +42,23 @@ Below are the specifics of such data types.
 
 #### Graph
 
-A Graph has the following methods:
-*add_vertex, adds a vertex to your graph
-*remove_vertex(vertex), removes the given vertex from the graph (vertex must not be connected)
-*make_connection(v1,v2), adds an edge between two vertices
-*break_connection(v1,v2), removes an edge between two vertices
-*find_connection(v1,v2), returns edge connecting two given vertices
-*is_connected?(v1,v2), returns true if the two vertices are connected with an edge, false otherwise
+A Graph has the following methods
+* add_vertex, adds a vertex to your graph
+* remove_vertex(vertex), removes the given vertex from the graph (vertex must not be connected)
+* make_connection(v1,v2), adds an edge between two vertices
+* break_connection(v1,v2), removes an edge between two vertices
+* find_connection(v1,v2), returns edge connecting two given vertices
+* is_connected?(v1,v2), returns true if the two vertices are connected with an edge, false otherwise
 
 #### FaceGraph
 
 A FaceGraph has the following methods, in addition to its inheritance from Graph
-*add_face(edges_array), makes a face with the given edges (must be cyclicly connected)
-*make_original_face(num_edges), which makes a standard disconnected face
-*add_attached_face(vertex_array, num_edges), which adds a face connected to the vertex_array
-*find_neighbors(vertex_array), lists all faces containing the given vertices
-*find_face_neighbors(face), which finds all neighbors of the given face
-**a neighbor of a face is defined as one that shares a vertex (not necessarily an edge)
-*make_vertex_line(vertex_array), reorders a list of connected vertices by connection sequence
+* add_face(edges_array), makes a face with the given edges (must be cyclicly connected)
+* make_original_face(num_edges), which makes a standard disconnected face
+* add_attached_face(vertex_array, num_edges), which adds a face connected to the vertex_array
+* find_neighbors(vertex_array), lists all faces containing the given vertices
+* find_face_neighbors(face), which finds all neighbors of the given face.  A neighbor of a face is defined as one that shares a vertex (not necessarily an edge)
+* make_vertex_line(vertex_array), reorders a list of connected vertices by connection sequence
 
 ## Development
 
