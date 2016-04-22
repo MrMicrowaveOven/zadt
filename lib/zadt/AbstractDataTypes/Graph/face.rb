@@ -15,24 +15,6 @@
     end
 
     # TODO: Neighbors shouldn't be stored in Face, as FaceGraph takes care of this
-    def self.help
-      puts "Here are the methods for Face:"
-
-      puts "#add_neighbor(face)"
-      puts "#remove_neighbor(neighbor)"
-    end
-
-    def self.methods
-      self.help
-    end
-
-    def help
-      self.help
-    end
-
-    def methods
-      help
-    end
 
     def add_neighbor(face)
       # face_info is a catalog of information about the face's neighbor

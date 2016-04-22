@@ -22,7 +22,7 @@ Or install it yourself as:
 
 Zadt::ADT::help will return a list of objects in the collection, as well as a brief description of each type.
 
-I also made a "help" function for each Data Type.  Type Zadt::StackQueue.help get a list of functions for the StackQueue, and so on.
+I also made a "help" function for each Data Type.  Type Zadt::StackQueue.help get a list of methods for the StackQueue, and so on.
 
 And don't forget to require 'zadt' at the top!
 

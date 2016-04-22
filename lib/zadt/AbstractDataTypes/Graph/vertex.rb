@@ -17,10 +17,6 @@
       @value = value
     end
 
-    def self.methods
-      self.help
-    end
-
     # Make an edge between this vertex and another
     def connect(other_vertex, edge)
       return nil if !other_vertex.is_a?(Vertex) || other_vertex == self
@@ -41,22 +37,4 @@
       description += ": empty" if @value.empty?
     end
 
-    def self.help
-      puts "Here are the methods for Vertex:"
-      puts "#connect(other_vertex)"
-      puts "#is_connected?(other_vertex)"
-      puts "#make_connection(v1,v2)"
-      puts "#break_connection(v1,v2)"
-      puts "#find_connection(v1,v2)"
-      puts "#is_connected?(v1,v2)"
-    end
-
-    def help
-      Vertex.methods
-    end
-
-    def methods
-      help
-    end
-    private
   end

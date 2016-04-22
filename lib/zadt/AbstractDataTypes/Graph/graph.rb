@@ -20,8 +20,12 @@ module Zadt
       @value = Hash.new
     end
 
-    def self.methods
+    def help
       Graph.help
+    end
+
+    def self.help
+      Graph.show_help_message
     end
 
     # Add a vertex
@@ -87,18 +91,6 @@ module Zadt
       else
         raise "Vertices are not connected"
       end
-    end
-
-    def help
-      Graph.help
-    end
-
-    def methods
-      help
-    end
-
-    def self.help
-      Graph.show_help_message
     end
 
     private

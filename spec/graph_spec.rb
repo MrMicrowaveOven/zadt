@@ -70,14 +70,16 @@ describe Zadt::Graph do
   end
 
   describe "#help_methods" do
-    it "has valid help methods: #help and #methods" do
-      expect {@graph.methods}.to output(/Graph/).to_stdout
+    it "has valid help method: #help" do
       expect {@graph.help}.to output(/Graph/).to_stdout
     end
 
-    it "has class help methods" do
-      expect {Zadt::Graph.methods}.to output(/Graph/).to_stdout
+    it "has class help method" do
       expect {Zadt::Graph.help}.to output(/Graph/).to_stdout
+    end
+
+    it "maintains standard Ruby #methods" do
+      expect(@graph.methods).to include(:add_vertex)
     end
   end
 

@@ -113,17 +113,16 @@ describe Zadt::FaceGraph do
     end
   end
   describe "#help_methods" do
-    before :each do
-
-    end
-    it "has valid help methods: #help and #methods" do
-      expect {@facegraph.methods}.to output(/Graph/).to_stdout
+    it "has valid help method: #help" do
       expect {@facegraph.help}.to output(/Graph/).to_stdout
     end
 
-    it "has class help methods" do
-      expect {Zadt::FaceGraph.methods}.to output(/Graph/).to_stdout
+    it "has class help method" do
       expect {Zadt::FaceGraph.help}.to output(/Graph/).to_stdout
+    end
+
+    it "maintains standard Ruby #methods" do
+      expect(@facegraph.methods).to include(:add_vertex)
     end
   end
 end
