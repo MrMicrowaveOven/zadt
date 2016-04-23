@@ -51,6 +51,7 @@ module Zadt
 
     # Make an edge between two vertices
     def make_connection(v1, v2)
+      raise "not a vertex" unless v1.is_a?(Vertex) && v2.is_a?(Vertex)
       raise "already connected" if is_connected?(v1, v2)
       # Make new edge
       edge = Edge.new(v1, v2)
@@ -65,7 +66,9 @@ module Zadt
 
     # Find the edge connecting two vertices
     def find_connection(v1, v2)
+      raise "Vertices not connected" if !is_connected?(v1, v2)
       connection = v1.edges.select {|edge| edge.connection.include?(v2)}
+      raise "Error finding connection" if connection.length > 1
       connection.first
     end
 

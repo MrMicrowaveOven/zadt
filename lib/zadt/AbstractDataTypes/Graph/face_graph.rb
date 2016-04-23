@@ -7,7 +7,7 @@ module Zadt
     attr_reader :faces
     #   in addition to its parent's :vertices and :edges
 
-    # Contains
+    # Contains (inherits)
     # attr_accessor :value
 
     def initialize
@@ -60,7 +60,7 @@ module Zadt
     #   a vertex with the new face
     def add_attached_face(vertex_array, num_edges)
       # Make the vertices into a line
-      vertex_line = make_vertex_line(vertex_array)
+      vertex_line = confirm_vertex_line(vertex_array)
       # This finds the "ends" of the vertex line
       end_vertices = [vertex_line.first, vertex_line.last]
       # Find the neighbors that will be added later
@@ -97,12 +97,6 @@ module Zadt
       # Store the new edges
       @edges += edge_ref
 
-      new_neighbors.each do |neighbor|
-        # Add all the new_neighbors
-        face.add_neighbor(neighbor)
-        # Make this a neighbor to all new_neighbors
-        neighbor.add_neighbor(face)
-      end
       face
     end
 
@@ -127,22 +121,29 @@ module Zadt
 
 
   private
+    #
+    # def make_vertex_line(vertex_array)
+    #   connection_line = []
+    #   connection_line << vertex_array.first
+    #   continue = true
+    #   until connection_line.length == vertex_array.length || !continue
+    #     continue = false
+    #     vertex_array.each do |vertex|
+    #       if vertex.is_connected?(connection_line.last) && !connection_line.include?(vertex)
+    #         continue = true
+    #         connection_line << vertex
+    #       end
+    #     end
+    #     raise "Vertices not connected" if continue == false
+    #   end
+    #   connection_line
+    # end
 
-    def make_vertex_line(vertex_array)
-      connection_line = []
-      connection_line << vertex_array.first
-      continue = true
-      until connection_line.length == vertex_array.length || !continue
-        continue = false
-        vertex_array.each do |vertex|
-          if vertex.is_connected?(connection_line.last) && !connection_line.include?(vertex)
-            continue = true
-            connection_line << vertex
-          end
-        end
-        raise "Vertices not connected" if continue == false
+    def confirm_vertex_line(vertex_array)
+      (vertex_array.length - 1).times do |i|
+        raise "Vertices not connected" unless vertex_array[i].is_connected?(vertex_array[i+1])
       end
-      connection_line
+      vertex_array
     end
 
     def make_neighbors(face1, face2)
@@ -163,9 +164,8 @@ module Zadt
       puts "#find_neighbors(vertex_array), lists all faces containing the given vertices"
       puts "#find_face_neighbors(face), which finds all neighbors of the given face"
       puts "--a neighbor of a face is defined as one that shares a vertex (not necessarily an edge)"
-      puts "#make_vertex_line(vertex_array), reorders a list of connected vertices by connection sequence"
       puts ""
-      puts "FaceGraph also inherits the following functions from Graph:"
+      puts "FaceGraph also inherits the following methods from Graph:"
       puts "#add_vertex"
       puts "#remove_vertex(vertex)"
       puts "#make_connection(v1,v2), adds an edge between two vertices"

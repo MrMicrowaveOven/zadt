@@ -26,13 +26,19 @@ I also made a "help" function for each Data Type.  Type Zadt::StackQueue.help ge
 
 And don't forget to require 'zadt' at the top!
 
-### MinMaxStackQueue
+### Stacks and Queues
+
+If you've never heard of a Stack or a Queue before, click [here](https://en.wikibooks.org/wiki/Data_Structures/Stacks_and_Queues) for an introduction.
 
 A MinMaxStackQueue is an Queue object that allows the minimum and maximum values to be found in constant time.  It's built by making a Queue out of a Stack, which has that same min/max ability.
 
 Since it is made out of Queues and Stacks, those data types are also available.  I also provided StackQueue (functionally the same as a Queue), and a MinMaxStack, which is a Stack version of MinMaxStackQueue.
 
-### Graphs
+<!-- #### Stack
+
+My Stack has the following methods -->
+
+### Graph Objects
 
 A Graph is a data type that consists of Vertices, which are connected by Edges.  In addition, a FaceGraph is a Graph which also consists of Faces: the space defined inside a set of cyclic edges.
 
@@ -58,7 +64,6 @@ A FaceGraph has the following methods, in addition to its inheritance from Graph
 * add_attached_face(vertex_array, num_edges), which adds a face connected to the vertex_array
 * find_neighbors(vertex_array), lists all faces containing the given vertices
 * find_face_neighbors(face), which finds all neighbors of the given face.  A neighbor of a face is defined as one that shares a vertex (not necessarily an edge)
-* make_vertex_line(vertex_array), reorders a list of connected vertices by connection sequence
 
 ## Development
 

@@ -88,20 +88,14 @@ describe Zadt::FaceGraph do
     end
     it "includes all neighbors" do
       face = @facegraph.add_attached_face([@a, @b], 4)
-      neighbors = []
-      face.neighboring_faces.each do |id, neighbor_info|
-        neighbors << neighbor_info["face"]
-      end
+      neighbors = @facegraph.find_face_neighbors(face)
       expect(neighbors.include?(@goodface1)).to eq(true)
       expect(neighbors.include?(@goodface2)).to eq(true)
     end
     # TODO: Finish this spec
     it "adds the new face as a neighbor to its neighbors" do
       face = @facegraph.add_attached_face([@a, @b], 4)
-      neighbors = []
-      @goodface1.neighboring_faces.each do |id, neighbor_info|
-        neighbors << neighbor_info["face"]
-      end
+      neighbors = @facegraph.find_face_neighbors(@goodface1)
       expect(neighbors.include?(face)).to eq(true)
     end
     it "connects each of its vertices" do
@@ -121,8 +115,11 @@ describe Zadt::FaceGraph do
       expect {Zadt::FaceGraph.help}.to output(/Graph/).to_stdout
     end
 
-    it "maintains standard Ruby #methods" do
+    it "maintains standard Ruby FaceGraph #methods" do
       expect(@facegraph.methods).to include(:add_vertex)
+    end
+    it "maintains standard Ruby Face #methods" do
+      expect(@goodface2.methods).to include(:edges)
     end
   end
 end

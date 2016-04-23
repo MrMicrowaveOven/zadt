@@ -41,27 +41,4 @@ describe Face do
     end
   end
 
-  describe "#add_neighbor" do
-    it "adds a neighbor" do
-      @goodface1.add_neighbor(@goodface2)
-      vert_share = @goodface1.neighboring_faces[0]["shared_vertices"]
-      expect(vert_share).to match_array([@a, @c])
-    end
-    it "raises error if no elements are shared" do
-      expect {@goodface1.add_neighbor(@disface)}.to raise_error("No connecting edges or vertices")
-    end
-  end
-
-  describe "#remove_neighbor" do
-    it "removes a neighbor (only one way)" do
-      @goodface1.add_neighbor(@goodface2)
-      @goodface1.remove_neighbor(@goodface2)
-      expect(@goodface1.neighboring_faces.length).to eq(0)
-    end
-
-    it "returns error if they aren't neighbors" do
-      expect {@goodface1.remove_neighbor(@disface)}.to raise_error("Not a neighbor")
-    end
-  end
-
 end

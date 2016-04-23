@@ -28,6 +28,11 @@ describe Zadt::Graph do
     it "raises error when connection already exists" do
       expect {@graph.make_connection(@a,@b)}.to raise_error("already connected")
     end
+
+    it "raises error when passed non-vertices" do
+      expect {@graph.make_connection(@A,@b)}.to raise_error("not a vertex")
+    end
+
   end
 
   describe "#break_connection" do
@@ -65,7 +70,7 @@ describe Zadt::Graph do
     end
     it "returns nil if the vertices are unconnected" do
       @graph.break_connection(@a,@b)
-      expect(@graph.find_connection(@a,@b)).to eq(nil)
+      expect {@graph.find_connection(@a,@b)}.to raise_error("Vertices not connected")
     end
   end
 
@@ -78,8 +83,14 @@ describe Zadt::Graph do
       expect {Zadt::Graph.help}.to output(/Graph/).to_stdout
     end
 
-    it "maintains standard Ruby #methods" do
+    it "maintains standard Ruby Graph #methods" do
       expect(@graph.methods).to include(:add_vertex)
+    end
+    it "maintains standard Ruby Vertex #methods" do
+      expect(@a.methods).to include(:is_connected?)
+    end
+    it "maintains standard Ruby Edge #methods" do
+      expect(@A.methods).to include(:connection)
     end
   end
 
