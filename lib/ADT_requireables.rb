@@ -10,3 +10,6 @@ require_relative 'zadt/AbstractDataTypes/Graph/edge.rb'
 require_relative 'zadt/AbstractDataTypes/Graph/graph.rb'
 require_relative 'zadt/AbstractDataTypes/Graph/face.rb'
 require_relative 'zadt/AbstractDataTypes/Graph/face_graph.rb'
+
+require_relative 'zadt/AbstractDataTypes/Geometrics/universe.rb'
+require_relative 'zadt/AbstractDataTypes/Geometrics/sphere.rb'

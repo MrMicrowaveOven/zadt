@@ -19,7 +19,9 @@
 
     # Make an edge between this vertex and another
     def connect(other_vertex, edge)
-      return nil if !other_vertex.is_a?(Vertex) || other_vertex == self
+      raise "not a vertex" unless other_vertex.is_a?(Vertex)
+      raise "cannot connect vertex to self" if other_vertex == self
+      raise "not an edge" unless edge.is_a?(Edge)
       raise "already connected" if is_connected?(other_vertex)
       # Store connection info in this vertex
       @edges << edge
@@ -29,6 +31,7 @@
 
     # Returns if another vertex is "connected" to this one
     def is_connected?(other_vertex)
+      raise "not a vertex" unless other_vertex.is_a?(Vertex)
       @connections.include?(other_vertex)
     end
 

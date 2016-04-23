@@ -38,6 +38,7 @@ module Zadt
     # Remove a vertex
     def remove_vertex(vertex)
       # The vertex must exist
+      raise "not a vertex" unless vertex.is_a?(Vertex)
       if !vertex
         raise "Vertex does not exist"
       # The vertex must not be connected to anything
@@ -66,6 +67,7 @@ module Zadt
 
     # Find the edge connecting two vertices
     def find_connection(v1, v2)
+      raise "not a vertex" unless v1.is_a?(Vertex) && v2.is_a?(Vertex)
       raise "Vertices not connected" if !is_connected?(v1, v2)
       connection = v1.edges.select {|edge| edge.connection.include?(v2)}
       raise "Error finding connection" if connection.length > 1
@@ -74,6 +76,7 @@ module Zadt
 
     # Returns whether two vertices are connected
     def is_connected?(v1, v2)
+      raise "not a vertex" unless v1.is_a?(Vertex) && v2.is_a?(Vertex)
       v1.connections.include?(v2)
     end
 

@@ -26,6 +26,7 @@ module Zadt
 
 
     def add_face(edges_array)
+      edge_array_check(edges_array)
       face = Face.new(edges_array)
       @faces << face
       face
@@ -33,7 +34,7 @@ module Zadt
 
     # Makes a face with num_edges edges, which will be attached to nothing.
     def make_original_face(num_edges)
-
+      num_edges_check(num_edges)
       # Make the vertices
       vert_ref = Array.new(num_edges) {Vertex.new}
       edge_ref = []
@@ -59,6 +60,8 @@ module Zadt
     # This will automatically make_neighbors with any faces that share
     #   a vertex with the new face
     def add_attached_face(vertex_array, num_edges)
+      vertex_array_check(vertex_array)
+      num_edges_check(num_edges)
       # Make the vertices into a line
       vertex_line = confirm_vertex_line(vertex_array)
       # This finds the "ends" of the vertex line
@@ -102,6 +105,7 @@ module Zadt
 
     # Return all faces containing the given vertices
     def find_neighbors(vertex_array)
+      vertex_array_check(vertex_array)
       neighbors = []
       vertex_array.each do |vertex|
         @faces.each do |face|
@@ -115,29 +119,27 @@ module Zadt
       # Neighbor is defined as sharing a vertex,
       # not necessarily sharing an edge.
     def find_face_neighbors(face)
+      raise "not a face" unless face.is_a?(Face)
       neighbors = find_neighbors(face.vertices)
       neighbors - [face]
     end
 
-
   private
-    #
-    # def make_vertex_line(vertex_array)
-    #   connection_line = []
-    #   connection_line << vertex_array.first
-    #   continue = true
-    #   until connection_line.length == vertex_array.length || !continue
-    #     continue = false
-    #     vertex_array.each do |vertex|
-    #       if vertex.is_connected?(connection_line.last) && !connection_line.include?(vertex)
-    #         continue = true
-    #         connection_line << vertex
-    #       end
-    #     end
-    #     raise "Vertices not connected" if continue == false
-    #   end
-    #   connection_line
-    # end
+
+    def vertex_array_check(vertex_array)
+      raise "invalid vertex array" unless vertex_array.is_a?(Array)
+      vertex_array.each {|vertex| raise "not a vertex" unless vertex.is_a?(Vertex)}
+    end
+
+    def edge_array_check(edges_array)
+      raise "not an array" unless edges_array.is_a?(Array)
+      edges_array.each {|edge| raise "not an edge" unless edge.is_a?(Edge)}
+    end
+
+    def num_edges_check(num_edges)
+      raise "invalid number of edges" unless num_edges.is_a?(Integer)
+      raise "need 3 or more edgesto make a face" unless num_edges > 2
+    end
 
     def confirm_vertex_line(vertex_array)
       (vertex_array.length - 1).times do |i|

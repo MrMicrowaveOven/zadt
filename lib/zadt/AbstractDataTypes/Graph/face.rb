@@ -5,8 +5,9 @@
     # Contains
     attr_accessor :value
 
-    def initialize(edges_array, neighboring_faces = {}, value = Hash.new)
-      raise "Not enough edges" if edges_array.length < 3
+    def initialize(edges_array, value = Hash.new)
+      raise "not enough edges" if edges_array.length < 3
+      edges_array.each {|edge| raise "not an edge" unless edge.is_a?(Edge)}
       @edges = edges_array
       vertices = edges_array.map{ |edge| edge.connection}.inject(:+).uniq
       @vertices = ensure_cyclic(vertices)
