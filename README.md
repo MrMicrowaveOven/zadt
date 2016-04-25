@@ -61,9 +61,38 @@ A Graph has the following methods
 A FaceGraph has the following methods, in addition to its inheritance from Graph
 * add_face(edges_array), makes a face with the given edges (must be cyclicly connected)
 * make_original_face(num_edges), which makes a standard disconnected face
-* add_attached_face(vertex_array, num_edges), which adds a face connected to the vertex_array
+* add_attached_face(vertex_array, num_edges), which adds a face connected to the vertex_array specified.  Face will consist of the number of edges specified.
 * find_neighbors(vertex_array), lists all faces containing the given vertices
 * find_face_neighbors(face), which finds all neighbors of the given face.  A neighbor of a face is defined as one that shares a vertex (not necessarily an edge)
+
+### Geometrics
+
+Geometric objects, contained within a universe.
+
+
+#### Universe
+
+An universe is a Euclidean coordinate system that can be any number of dimensions.  When initialized, you can specify how many dimensions you want it, or you can leave it blank to have infinite dimensions.
+
+Within the universe, you can create Points and Spheres (though the more proper term is HyperSphere, more on that later).  The only two functions are #add_point(coordinates) and #add_sphere(radius, center).  Both will check to ensure that the number of dimensions matches the universe (if the universe has a finite number of dimensions).
+
+In addition, the universe has the class method Universe.distance(pointA, pointB), which will tell you the distance between any two points.  This will work for points in any number of dimensions, so long as the two points are of the same.
+
+#### Sphere
+
+A Sphere is a set of points within a certain number of dimensions that are equidistant (equal distance) from a given point.  The number of dimensions is defined by the number of coordinates in its center.  For example, a two-dimensional sphere (called a Circle) has a center of (x,y).  This leads to the more proper term of HyperSphere, though that is not used in syntax.
+
+Upon creation, a sphere is given a radius and a center (default is the 3-dimensional Unit Sphere, of radius 1 and center [0,0,0]).  Spheres are immutable, as of yet, and though the number of dimensions is limitless certain functionalities will only apply to a 3-dimensional sphere.
+
+A Sphere has the following methods
+* on_sphere?(point) will return if a point is on the sphere.
+* in_sphere?(point) will return if a point is within the boundaries of the sphere.
+* how_far_from_sphere(point) will return how far a point is from the boundaries of the sphere.
+
+The following methods are available exclusively for 3-dimensional spheres.
+* volume, returns the volume of the sphere
+* surface_area, returns the surface area of the sphere
+* equation, returns a string of the standard equation of the sphere.  For example, a sphere with Radius 2 and Center [0,1,-2] will return "x^2 + (y - 1)^2 + (z + 2)^2 = 4".
 
 ## Development
 
