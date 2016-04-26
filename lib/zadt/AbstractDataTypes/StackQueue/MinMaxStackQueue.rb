@@ -11,26 +11,11 @@ module Zadt
     end
 
     def self.help
-      puts "Here are the functions for MinMaxStackQueue:"
-      puts "#show"
-      puts "#enqueue(value)"
-      puts "#dequeue"
-      puts "#min"
-      puts "#max"
-      puts "#length"
-      puts "#empty?"
-    end
-
-    def self.methods
-      self.help
+      Zadt::ADT::show_minmaxstackqueue_help_message
     end
 
     def help
       MinMaxStackQueue.help
-    end
-
-    def methods
-      help
     end
 
     def show
@@ -48,6 +33,15 @@ module Zadt
         end
       end
       @out.pop
+    end
+
+    def peek
+      if @out.empty?
+        @in.length.times do
+          @out.push(@in.pop)
+        end
+      end
+      @out.peek
     end
 
     def min

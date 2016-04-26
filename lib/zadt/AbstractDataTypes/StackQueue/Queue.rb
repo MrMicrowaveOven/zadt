@@ -5,24 +5,11 @@ module Zadt
     end
 
     def self.help
-      puts "Here are the functions for Queue:"
-      puts "#show"
-      puts "#enqueue(value)"
-      puts "#dequeue"
-      puts "#length"
-      puts "#empty?"
-    end
-
-    def self.methods
-      self.help
+      Zadt::ADT::show_queue_help_message
     end
 
     def help
       Queue.help
-    end
-
-    def methods
-      help
     end
 
     def show
@@ -36,6 +23,10 @@ module Zadt
 
     def dequeue
       @values.shift
+    end
+
+    def peek
+      @values.first
     end
 
     def length

@@ -10,24 +10,11 @@ module Zadt
     end
 
     def self.help
-      puts "Here are the functions for StackQueue:"
-      puts "#show"
-      puts "#enqueue(value)"
-      puts "#dequeue"
-      puts "#length"
-      puts "#empty?"
-    end
-
-    def self.methods
-      self.help
+      Zadt::ADT::show_stackqueue_help_message
     end
 
     def help
       StackQueue.help
-    end
-
-    def methods
-      help
     end
 
     def show
@@ -47,12 +34,21 @@ module Zadt
       @out.pop
     end
 
+    def peek
+      if @out.empty?
+        @in.length.times do
+          @out.push(@in.pop)
+        end
+      end
+      @out.peek
+    end
+
     def length
       @in.length + @out.length
     end
 
     def empty?
-      @values.empty?
+      @in.empty? && @out.empty?
     end
   end
 end

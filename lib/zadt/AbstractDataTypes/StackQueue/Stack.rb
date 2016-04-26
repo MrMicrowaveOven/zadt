@@ -5,24 +5,11 @@ module Zadt
     end
 
     def self.help
-      puts "Here are the functions for Stack:"
-      puts "#show"
-      puts "#push(value)"
-      puts "#pop"
-      puts "#length"
-      puts "#empty?"
-    end
-
-    def self.methods
-      self.help
+      Zadt::ADT::show_stack_help_message
     end
 
     def help
       Stack.help
-    end
-
-    def methods
-      help
     end
 
     def show
@@ -36,6 +23,10 @@ module Zadt
 
     def pop
       @values.pop
+    end
+
+    def peek
+      @values.last
     end
 
     def length

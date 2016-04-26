@@ -8,27 +8,11 @@ module Zadt
     end
 
     def self.help
-      puts "Here are the functions for MinMaxStack:"
-      puts "#push(value)"
-      puts "#pop"
-      puts "#peek"
-      puts "#min"
-      puts "#max"
-      puts "#length"
-      puts "#show"
-      puts "#empty?"
-    end
-
-    def self.methods
-      self.help
+      Zadt::ADT::show_minmaxstack_help_message
     end
 
     def help
-      self.help
-    end
-
-    def methods
-      help
+      MinMaxStack.help
     end
 
     def push(val)

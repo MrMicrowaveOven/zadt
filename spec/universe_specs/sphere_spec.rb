@@ -1,14 +1,14 @@
 require_relative '../spec_helper.rb'
 
-describe Zadt::Sphere do
+describe Sphere do
   before :each do
-    @sph1 = Zadt::Sphere.new(2)
+    @sph1 = Sphere.new(2)
     @point_on_sph1 = Point.new([0,2,0])
     @point_not_on_sph1 = Point.new([1,2,0])
     @point_in_sph1 = Point.new([1,1,0])
     @point_not_in_sph1 = Point.new([1,3,0])
 
-    @sph2 = Zadt::Sphere.new(2, [0,3,-5])
+    @sph2 = Sphere.new(2, [0,3,-5])
     @point_one_away_from_sph2 = Point.new([0,2,-5])
     @point_two_outside_of_sph2 = Point.new([-4,3,-5])
   end
@@ -61,6 +61,20 @@ describe Zadt::Sphere do
     end
     it "returns equation for uncentered sphere" do
       expect(@sph2.equation).to eq("x^2 + (y - 3)^2 + (z + 5)^2 = 4")
+    end
+  end
+
+  describe "#help_methods" do
+    it "has valid help method: #help" do
+      expect {@sph1.help}.to output(/Sphere/).to_stdout
+    end
+
+    it "has class help method" do
+      expect {Sphere.help}.to output(/Sphere/).to_stdout
+    end
+
+    it "maintains standard Ruby Sphere #methods" do
+      expect(@sph1.methods).to include(:volume)
     end
   end
 end

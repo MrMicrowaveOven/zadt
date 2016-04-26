@@ -35,4 +35,18 @@ describe Zadt::Universe do
       expect(@uni.objects.first.radius).to eq(3)
     end
   end
+
+  describe "#help_methods" do
+    it "has valid help method: #help" do
+      expect {@uni.help}.to output(/Universe/).to_stdout
+    end
+
+    it "has class help method" do
+      expect {Zadt::Universe.help}.to output(/Universe/).to_stdout
+    end
+
+    it "maintains standard Ruby Universe #methods" do
+      expect(@uni.methods).to include(:add_sphere)
+    end
+  end
 end

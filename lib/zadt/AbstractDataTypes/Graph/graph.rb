@@ -102,13 +102,7 @@ module Zadt
     private
 
     def self.show_help_message
-      puts "Here are the methods for Graph:"
-      puts "#add_vertex"
-      puts "#remove_vertex(vertex)"
-      puts "#make_connection(v1,v2), adds an edge between two vertices"
-      puts "#break_connection(v1,v2)"
-      puts "#find_connection(v1,v2), returns edge connecting two given vertices"
-      puts "#is_connected?(v1,v2)"
+      Zadt::ADT::show_graph_help_message
     end
   end
 end

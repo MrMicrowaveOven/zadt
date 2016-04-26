@@ -34,9 +34,53 @@ A MinMaxStackQueue is an Queue object that allows the minimum and maximum values
 
 Since it is made out of Queues and Stacks, those data types are also available.  I also provided StackQueue (functionally the same as a Queue), and a MinMaxStack, which is a Stack version of MinMaxStackQueue.
 
-<!-- #### Stack
+#### Stack
 
-My Stack has the following methods -->
+My Stack has the following methods:
+* show, returns the entire stack
+* push(value), adds a value to the top of the stack
+* pop, returns the value at the top of the stack, and removes it
+* peek, returns the value at the top of the stack, but doesn't remove it
+* length, number of values in the stack
+* empty?, whether or not the stack is empty
+
+#### Queue
+
+My Queue has the following methods:
+* show, returns the entire queue
+* enqueue(value), adds a value to the back of the queue
+* dequeue, returns the value at the front of the queue, and removes it
+* peek, returns the value at the front of the queue, but doesn't remove it
+* length, number of values in the queue
+* empty?, whether or not the queue is empty
+
+#### StackQueue
+
+StackQueue has the same methodology as Queue
+
+#### MinMaxStack
+
+My MinMaxStack has the following methods:
+* show, returns the entire stack
+* push(value), adds a value to the top of the stack
+* pop, returns the value at the top of the stack, and removes it
+* peek, returns the value at the top of the stack, but doesn't remove it
+* min, returns the lowest value of the stack.  Works in constant time.
+* max, returns the highest value of the stack.  Works in constant time.
+* length, number of values in the stack
+* empty?, whether or not the stack is empty
+
+#### MinMaxStackQueue
+
+My MinMaxStackQueue has the following methods:
+* show, returns the entire queue
+* enqueue(value), adds a value to the back of the queue
+* dequeue, returns the value at the front of the queue, and removes it
+* peek, returns the value at the front of the queue, but doesn't remove it
+* min, returns the lowest value of the queue.  Works in constant time.
+* max, returns the highest value of the queue.  Works in constant time.
+* length, number of values in the queue
+* empty?, whether or not the queue is empty
 
 ### Graph Objects
 
@@ -72,7 +116,7 @@ Geometric objects, contained within a universe.
 
 #### Universe
 
-An universe is a Euclidean coordinate system that can be any number of dimensions.  When initialized, you can specify how many dimensions you want it, or you can leave it blank to have infinite dimensions.
+An universe is a Euclidean coordinate system that can be any number of dimensions.  When initialized, you can specify how many dimensions you want it, or you can leave it blank to have infinite dimensions.  Once a dimension is set, all objects in it are limited to that many dimensions.  A universe of infinite dimensions has no restrictions, and can hold objects of any number of dimensions.
 
 Within the universe, you can create Points and Spheres (though the more proper term is HyperSphere, more on that later).  The only two functions are #add_point(coordinates) and #add_sphere(radius, center).  Both will check to ensure that the number of dimensions matches the universe (if the universe has a finite number of dimensions).
 
