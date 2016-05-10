@@ -11,6 +11,8 @@ describe Sphere do
     @sph2 = Sphere.new(2, [0,3,-5])
     @point_one_away_from_sph2 = Point.new([0,2,-5])
     @point_two_outside_of_sph2 = Point.new([-4,3,-5])
+
+    @sph4d = Sphere.new(3, [0,0,0,2])
   end
 
   describe "#on_sphere?" do
@@ -46,6 +48,9 @@ describe Sphere do
   describe "#volume" do
     it "returns volume of sphere" do
       expect(@sph2.volume.round(2)).to eq(33.51)
+    end
+    it "raises error if not 3d sphere" do
+      expect{@sph4d.volume}.to raise_error("dimension error")
     end
   end
 
