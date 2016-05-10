@@ -1,7 +1,7 @@
 module Zadt
   class ADT
     def self.help
-      puts "Thank you for using Zagorski Advanced Data Types!"
+      puts "Thank you for using Zagorski Abstract Data Types!"
       puts "This package contains the following Data Types:"
 
       puts "Array-Like Data Types"
