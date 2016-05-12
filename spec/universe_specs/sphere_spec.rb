@@ -45,6 +45,15 @@ describe Sphere do
     end
   end
 
+  describe "#out_of_sphere?" do
+    it "returns true for a simple point out of the sphere" do
+      expect(@sph1.out_of_sphere?(@point_not_in_sph1)).to eq(true)
+    end
+    it "returns false for a simple point in the sphere" do
+      expect(@sph1.out_of_sphere?(@point_in_sph1)).to eq(false)
+    end
+  end
+
   describe "#volume" do
     it "returns volume of sphere" do
       expect(@sph2.volume.round(2)).to eq(33.51)
@@ -58,6 +67,9 @@ describe Sphere do
     it "returns surface_area of sphere" do
       expect(@sph2.surface_area.round(2)).to eq(50.27)
     end
+    it "raises error if not 3d sphere" do
+      expect{@sph4d.surface_area}.to raise_error("dimension error")
+    end
   end
 
   describe "#equation" do
@@ -66,6 +78,9 @@ describe Sphere do
     end
     it "returns equation for uncentered sphere" do
       expect(@sph2.equation).to eq("x^2 + (y - 3)^2 + (z + 5)^2 = 4")
+    end
+    it "raises error if not 3d sphere" do
+      expect{@sph4d.equation}.to raise_error("dimension error")
     end
   end
 

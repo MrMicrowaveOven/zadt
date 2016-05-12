@@ -1,6 +1,6 @@
 # zadt
 
-Zagorski ADT is a collection of data types that are not included in the standard Ruby library.
+Zagorski ADT is a collection of abstract data types that are not included in the standard Ruby library.
 
 ## Installation
 
@@ -113,7 +113,6 @@ A FaceGraph has the following methods, in addition to its inheritance from Graph
 
 Geometric objects, contained within a universe.
 
-
 #### Universe
 
 An universe is a Euclidean coordinate system that can be any number of dimensions.  When initialized, you can specify how many dimensions you want it, or you can leave it blank to have infinite dimensions.  Once a dimension is set, all objects in it are limited to that many dimensions.  A universe of infinite dimensions has no restrictions, and can hold objects of any number of dimensions.
@@ -131,6 +130,7 @@ Upon creation, a sphere is given a radius and a center (default is the 3-dimensi
 A Sphere has the following methods
 * on_sphere?(point) will return if a point is on the sphere.
 * in_sphere?(point) will return if a point is within the boundaries of the sphere.
+* out_of_sphere?(point) will return if a point is outside the boundaries of the sphere.
 * how_far_from_sphere(point) will return how far a point is from the boundaries of the sphere.
 
 The following methods are available exclusively for 3-dimensional spheres.

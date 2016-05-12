@@ -27,6 +27,10 @@ class Sphere
     Zadt::Universe.distance(@center, point) <= @radius
   end
 
+  def out_of_sphere?(point)
+    !in_sphere?(point)
+  end
+
   def how_far_from_sphere(point)
     (@radius - Zadt::Universe.distance(@center, point)).abs
   end
