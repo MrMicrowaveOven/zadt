@@ -79,9 +79,6 @@ describe Sphere do
     it "returns equation for uncentered sphere" do
       expect(@sph2.equation).to eq("x^2 + (y - 3)^2 + (z + 5)^2 = 4")
     end
-    it "raises error if not 3d sphere" do
-      expect{@sph4d.equation}.to raise_error("dimension error")
-    end
   end
 
   describe "#help_methods" do

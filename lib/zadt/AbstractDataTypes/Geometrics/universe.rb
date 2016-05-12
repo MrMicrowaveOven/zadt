@@ -1,4 +1,5 @@
 require_relative 'point.rb'
+require_relative 'circle.rb'
 require_relative 'sphere.rb'
 
 module Zadt
