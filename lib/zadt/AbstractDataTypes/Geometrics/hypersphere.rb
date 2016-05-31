@@ -4,7 +4,7 @@ class HyperSphere
   attr_reader :radius, :center
   attr_accessor :pct_error
 
-  def initialize(radius = 1, center = [0,0,0], pct_error = 1)
+  def initialize(radius = 1, center = [0,0,0,0], pct_error = 1)
     @radius = radius
     @center = Point.new(center)
     @pct_error = pct_error
@@ -18,19 +18,19 @@ class HyperSphere
     Sphere.help
   end
 
-  def on_sphere?(point)
+  def on?(point)
     Zadt::Universe.distance(@center, point).round(2) == radius.round(2)
   end
 
-  def in_sphere?(point)
+  def inside?(point)
     Zadt::Universe.distance(@center, point) <= @radius
   end
 
-  def out_of_sphere?(point)
-    !in_sphere?(point)
+  def outside?(point)
+    !inside?(point)
   end
 
-  def how_far_from_sphere(point)
+  def how_far(point)
     (@radius - Zadt::Universe.distance(@center, point)).abs
   end
 

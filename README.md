@@ -121,22 +121,31 @@ Within the universe, you can create Points and Spheres (though the more proper t
 
 In addition, the universe has the class method Universe.distance(pointA, pointB), which will tell you the distance between any two points.  This will work for points in any number of dimensions, so long as the two points are of the same.
 
-#### Sphere
+#### HyperSphere
 
-A Sphere is a set of points within a certain number of dimensions that are equidistant (equal distance) from a given point.  The number of dimensions is defined by the number of coordinates in its center.  For example, a two-dimensional sphere (called a Circle) has a center of (x,y).  This leads to the more proper term of HyperSphere, though that is not used in syntax.
+A HyperSphere is a set of points within a certain number of dimensions that are equidistant (equal distance) from a given point.  The number of dimensions is defined by the number of coordinates in its center.  For example, a two-dimensional sphere (called a Circle) has a center of (x,y).
 
-Upon creation, a sphere is given a radius and a center (default is the 3-dimensional Unit Sphere, of radius 1 and center [0,0,0]).  Spheres are immutable, as of yet, and though the number of dimensions is limitless certain functionalities will only apply to a 3-dimensional sphere.
+Upon creation, a HyperSphere is given a radius and a center (default is the 4-dimensional Unit Sphere, of radius 1 and center [0,0,0,0]).  HyperSpheres are immutable.
 
-A Sphere has the following methods
-* on_sphere?(point) will return if a point is on the sphere.
-* in_sphere?(point) will return if a point is within the boundaries of the sphere.
-* out_of_sphere?(point) will return if a point is outside the boundaries of the sphere.
-* how_far_from_sphere(point) will return how far a point is from the boundaries of the sphere.
+A HyperSphere has the following methods
+* on?(point) will return if a point is on the HyperSphere.
+* inside?(point) will return if a point is within the boundaries of the HyperSphere.
+* outside?(point) will return if a point is outside the boundaries of the HyperSphere.
+* how_far(point) will return how far a point is from the boundaries of the HyperSphere.
 
-The following methods are available exclusively for 3-dimensional spheres.
+##### Sphere
+
+A Sphere is a sub-class of the HyperSphere that has 3 dimensions and the following additional methods.
 * volume, returns the volume of the sphere
 * surface_area, returns the surface area of the sphere
 * equation, returns a string of the standard equation of the sphere.  For example, a sphere with Radius 2 and Center [0,1,-2] will return "x^2 + (y - 1)^2 + (z + 2)^2 = 4".
+
+##### Circle
+
+A Circle is a sub-class of the HyperSphere that has 2 dimensions and the following additional methods.
+* area, returns the area of the sphere
+* circumference, returns the circumference of the sphere
+* equation, returns a string of the standard equation of the sphere.  For example, a sphere with Radius 2 and Center [0,1] will return "x^2 + (y - 1)^2 = 4".
 
 ## Development
 
@@ -155,4 +164,4 @@ The gem is available as open source under the terms of the [MIT License](http://
 
 ## Contact
 
-This gem was written in its entirety by Benjamin Zagorski, who can be contacted at Benj@Zagorski.com.  Feel free to contact me with any questions or comments, as I'm very open to suggestions.
+This gem was written in its entirety by Benjamin Zagorski, who can be contacted at Benj@Zagorski.com.  My portfolio can be found at [BenjZagorski.online]("https://benjzagorski.online").  Feel free to contact me with any questions or comments, as I'm very open to suggestions.

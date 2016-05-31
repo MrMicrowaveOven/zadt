@@ -2,6 +2,9 @@ require_relative "hypersphere.rb"
 
 class Sphere < HyperSphere
 
+  def initialize(radius = 1, center = [0,0,0], pct_error = 1)
+    super(radius, center, pct_error)
+  end
 
   def volume
     dim_check(3)
@@ -12,22 +15,6 @@ class Sphere < HyperSphere
     dim_check(3)
     4.0 * Math::PI * (@radius ** 2)
   end
-
-  # def equation
-  #   dim_check(3)
-  #   center_point = @center.dup
-  #   coord_names = ["x", "y", "z"]
-  #   center_point.coords.each_with_index do |center_coord, index|
-  #     if center_coord == 0
-  #       # coord_name is fine
-  #     elsif center_coord < 0
-  #       coord_names[index] = "(#{coord_names[index]} + #{-center_coord})"
-  #     else
-  #       coord_names[index] = "(#{coord_names[index]} - #{center_coord})"
-  #     end
-  #   end
-  #   "#{coord_names[0]}^2 + #{coord_names[1]}^2 + #{coord_names[2]}^2 = #{@radius ** 2}"
-  # end
 
   def inspect
     "Sphere: #{equation}"
