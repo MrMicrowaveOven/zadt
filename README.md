@@ -146,13 +146,11 @@ A Circle is a sub-class of the HyperSphere that has 2 dimensions and the followi
 * area, returns the area of the sphere
 * circumference, returns the circumference of the sphere
 * equation, returns a string of the standard equation of the sphere.  For example, a sphere with Radius 2 and Center [0,1] will return "x^2 + (y - 1)^2 = 4".
-
-## Development
+<!-- ## Development
 
 After checking out the repo, run `bin/setup` to install dependencies. Then, run `rake spec` to run the tests. You can also run `bin/console` for an interactive prompt that will allow you to experiment.
 
-To install this gem onto your local machine, run `bundle exec rake install`. To release a new version, update the version number in `version.rb`, and then run `bundle exec rake release`, which will create a git tag for the version, push git commits and tags, and push the `.gem` file to [rubygems.org]("https://rubygems.org").
-
+To install this gem onto your local machine, run `bundle exec rake install`. To release a new version, update the version number in `version.rb`, and then run `bundle exec rake release`, which will create a git tag for the version, push git commits and tags, and push the `.gem` file to [rubygems.org]("https://rubygems.org"). -->
 ## Contributing
 
 Bug reports and pull requests are welcome on GitHub at https://github.com/[USERNAME]/zadt. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [Contributor Covenant](http://contributor-covenant.org) code of conduct.
@@ -164,4 +162,4 @@ The gem is available as open source under the terms of the [MIT License](http://
 
 ## Contact
 
-This gem was written in its entirety by Benjamin Zagorski, who can be contacted at Benj@Zagorski.com.  My portfolio can be found at [BenjZagorski.online]("https://benjzagorski.online").  Feel free to contact me with any questions or comments, as I'm very open to suggestions.
+This gem was written in its entirety by Benjamin Zagorski, who can be contacted at Benj@Zagorski.com.  My portfolio can be found at [BenjZagorski.online](https://benjzagorski.online).  Feel free to contact me with any questions or comments, as I'm very open to suggestions.
