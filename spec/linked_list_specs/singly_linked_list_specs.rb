@@ -1,8 +1,8 @@
-describe Zadt::SinglyLinkedList do
+describe Zadt::SinglyLinkedListNode do
   before :each do
-    @singlylinkedlistC = Zadt::SinglyLinkedList.new(3)
-    @singlylinkedlistB = Zadt::SinglyLinkedList.new(2, @singlylinkedlistC)
-    @singlylinkedlistA = Zadt::SinglyLinkedList.new(1, @singlylinkedlistB)
+    @singlylinkedlistC = Zadt::SinglyLinkedListNode.new(3)
+    @singlylinkedlistB = Zadt::SinglyLinkedListNode.new(2, @singlylinkedlistC)
+    @singlylinkedlistA = Zadt::SinglyLinkedListNode.new(1, @singlylinkedlistB)
   end
 
   describe "#next" do
