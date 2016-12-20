@@ -20,3 +20,4 @@ require_relative 'zadt/AbstractDataTypes/Graph/face_graph.rb'
 require_relative 'zadt/AbstractDataTypes/Geometrics/universe.rb'
 
 require_relative 'zadt/AbstractDataTypes/LinkedList/SinglyLinkedList.rb'
+require_relative 'zadt/AbstractDataTypes/LinkedList/DoublyLinkedList.rb'

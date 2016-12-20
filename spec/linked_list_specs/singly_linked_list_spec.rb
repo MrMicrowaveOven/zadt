@@ -1,3 +1,5 @@
+require_relative "../../lib/zadt/AbstractDataTypes/LinkedList/SinglyLinkedList.rb"
+
 describe Zadt::SinglyLinkedListNode do
   before :each do
     @singlylinkedlistC = Zadt::SinglyLinkedListNode.new(3)
@@ -7,8 +9,8 @@ describe Zadt::SinglyLinkedListNode do
 
   describe "#next" do
     it "points to the next link" do
-      expect(@singlylinkedlistA.next.value).to eq(2)
-      expect(@singlylinkedlistA.next.next.value).to eq(3)
+      expect(@singlylinkedlistA.next.val).to eq(2)
+      expect(@singlylinkedlistA.next.next.val).to eq(3)
     end
   end
 end
