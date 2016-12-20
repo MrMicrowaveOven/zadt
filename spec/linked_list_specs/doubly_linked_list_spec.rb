@@ -13,6 +13,16 @@ describe Zadt::DoublyLinkedListNode do
       expect(@nodeA.next.next.val).to eq(3)
     end
   end
+  describe "#val" do
+    it "contains node value" do
+      expect(@nodeA.val).to eq(1)
+      expect(@nodeC.val).to eq(3)
+    end
+    it "can be set with 'val='" do
+      @nodeA.val = 7
+      expect(@nodeA.val).to eq(7)
+    end
+  end
   describe "#prev" do
     it "points to the previous link" do
       expect(@nodeB.prev.val).to eq(1)
