@@ -25,6 +25,7 @@ describe Zadt::LinkedListNode do
       expect(@nodeA.val).to eq(7)
     end
   end
+  
   describe "#help_methods" do
     it "has valid help method: #help" do
       expect {@nodeA.help}.to output(/val/).to_stdout

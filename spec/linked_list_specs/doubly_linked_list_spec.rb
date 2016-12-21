@@ -53,6 +53,7 @@ describe Zadt::DoublyLinkedListNode do
   it "chains with nexts and prevs" do
     expect(@nodeA.next.prev.next).to eq(@nodeB)
   end
+  
   describe "#help_methods" do
     it "has valid help method: #help" do
       expect {@nodeA.help}.to output(/next/).to_stdout

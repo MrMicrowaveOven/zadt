@@ -146,6 +146,23 @@ A Circle is a sub-class of the HyperSphere that has 2 dimensions and the followi
 * area, returns the area of the sphere
 * circumference, returns the circumference of the sphere
 * equation, returns a string of the standard equation of the sphere.  For example, a sphere with Radius 2 and Center [0,1] will return "x^2 + (y - 1)^2 = 4".
+
+### Linked Lists
+
+A Linked List is a chain of nodes that each contain a value, and a pointer to the next link in the chain.  A Doubly Linked List has nodes that also point to the previous link in the chain.
+
+#### LinkedListNode
+
+LinkedListNode has the following methods.
+* val, can be used to get the value of the node
+* next, is a pointer to the next node in the chain
+
+#### DoublyLinkedListNode
+
+DoublyLinkedListNode has the following methods.
+* val, is used to get the value of the node
+* next, is a pointer to the next node in the chain
+* prev, is a pointer to the previous node in the chain
 <!-- ## Development
 
 After checking out the repo, run `bin/setup` to install dependencies. Then, run `rake spec` to run the tests. You can also run `bin/console` for an interactive prompt that will allow you to experiment.
