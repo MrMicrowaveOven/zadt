@@ -17,7 +17,7 @@ module Zadt
     private
 
     def self.show_help_message
-      Zadt::ADT::show_linkedlistnode_help_message
+      Zadt::ADT::show_linkedlist_help_message
     end
   end
 end

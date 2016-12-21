@@ -6,6 +6,7 @@ require_relative 'zadt/HelpModules/adt_help.rb'
 require_relative 'zadt/HelpModules/adt_stackqueue_help.rb'
 require_relative 'zadt/HelpModules/adt_graph_help.rb'
 require_relative 'zadt/HelpModules/adt_geometrics_help.rb'
+require_relative 'zadt/HelpModules/adt_linkedlist_help.rb'
 
 require_relative 'zadt/AbstractDataTypes/StackQueue/Stack.rb'
 require_relative 'zadt/AbstractDataTypes/StackQueue/Queue.rb'

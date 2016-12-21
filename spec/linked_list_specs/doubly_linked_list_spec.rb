@@ -53,4 +53,17 @@ describe Zadt::DoublyLinkedListNode do
   it "chains with nexts and prevs" do
     expect(@nodeA.next.prev.next).to eq(@nodeB)
   end
+  describe "#help_methods" do
+    it "has valid help method: #help" do
+      expect {@nodeA.help}.to output(/next/).to_stdout
+    end
+
+    it "has class help method" do
+      expect {Zadt::DoublyLinkedListNode.help}.to output(/val/).to_stdout
+    end
+
+    it "maintains standard Ruby DoublyLinkedListNode #methods" do
+      expect(@nodeA.methods).to include(:prev)
+    end
+  end
 end
