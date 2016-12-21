@@ -18,6 +18,11 @@ module Zadt
       puts "-FaceGraph, a sub-class of Graph which includes Faces"
       puts "--Face, a space surrounded by a cycle of Edges.  Consists of Vertices and the Edges connecting them"
 
+      puts "Linked Lists"
+      puts "-LinkedListNode, an object containing a value (val), and a pointer to the next link (next)."
+      puts "-DoublyLinkedListNode, an object containing a value (val), a pointer to the next link (next), and a pointer to the previous link (prev)."
+
+
       puts "Geometrics"
       puts "-Universe, consisting of Points and Spheres"
       puts "--Point, a 'spot' in the universe"

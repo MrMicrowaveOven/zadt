@@ -1,10 +1,8 @@
-require_relative "../../lib/zadt/AbstractDataTypes/LinkedList/SinglyLinkedList.rb"
-
-describe Zadt::SinglyLinkedListNode do
+describe Zadt::LinkedListNode do
   before :each do
-    @nodeC = Zadt::SinglyLinkedListNode.new(3)
-    @nodeB = Zadt::SinglyLinkedListNode.new(2, @nodeC)
-    @nodeA = Zadt::SinglyLinkedListNode.new(1, @nodeB)
+    @nodeC = Zadt::LinkedListNode.new(3)
+    @nodeB = Zadt::LinkedListNode.new(2, @nodeC)
+    @nodeA = Zadt::LinkedListNode.new(1, @nodeB)
   end
 
   describe "#next" do

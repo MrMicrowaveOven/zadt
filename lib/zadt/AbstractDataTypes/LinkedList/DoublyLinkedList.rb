@@ -21,7 +21,20 @@ module Zadt
       @prev = node
       node.next = self if node.next != self
     end
-  # private
+    
+    def help
+      LinkedListNode.help
+    end
+
+    def self.help
+      LinkedListNode.show_help_message
+    end
+
+    private
+
+    def self.show_help_message
+      Zadt::ADT::show_linkedlistnode_help_message
+    end
 
   end
 end
