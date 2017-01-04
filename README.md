@@ -125,7 +125,7 @@ In addition, the universe has the class method Universe.distance(pointA, pointB)
 
 A HyperSphere is a set of points within a certain number of dimensions that are equidistant (equal distance) from a given point.  The number of dimensions is defined by the number of coordinates in its center.  For example, a two-dimensional sphere (called a Circle) has a center of (x,y).
 
-Upon creation, a HyperSphere is given a radius and a center (default is the 4-dimensional Unit Sphere, of radius 1 and center [0,0,0,0]).  HyperSpheres are immutable.
+Upon creation, a HyperSphere is given a radius and a center (default is the 4-dimensional Unit Sphere, of radius 1 and center [0,0,0,0]).  HyperSpheres are immutable, meaning the radius and center cannot be changed.
 
 A HyperSphere has the following methods
 * on?(point) will return if a point is on the HyperSphere.

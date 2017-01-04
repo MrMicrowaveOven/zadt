@@ -1,6 +1,21 @@
 require_relative '../spec_helper.rb'
 
 describe Sphere do
+  describe "#initialize" do
+    it "makes a sphere with the given radius and center point" do
+      sphere1 = Sphere.new(3,[1,2,3])
+      expect(sphere1.radius).to eq(3)
+      expect(sphere1.center.coords).to eq([1,2,3])
+    end
+    it "defaults to a unit 3d sphere" do
+      default_sphere = Sphere.new
+      expect(default_sphere.radius).to eq(1)
+      expect(default_sphere.center.coords).to eq([0,0,0])
+    end
+    it "raises error if sphere's center is not 3-dimensions" do
+      expect{Sphere.new(2, [1,2,3,4,5])}.to raise_error("Sphere must be in 3-dimensions")
+    end
+  end
   before :each do
     @sph1 = Sphere.new(2)
     @point_on_sph1 = Point.new([0,2,0])
@@ -11,8 +26,6 @@ describe Sphere do
     @sph2 = Sphere.new(2, [0,3,-5])
     @point_one_away_from_sph2 = Point.new([0,2,-5])
     @point_two_outside_of_sph2 = Point.new([-4,3,-5])
-
-    @sph4d = Sphere.new(3, [0,0,0,2])
   end
 
   describe "#on?" do
@@ -58,17 +71,11 @@ describe Sphere do
     it "returns volume of sphere" do
       expect(@sph2.volume.round(2)).to eq(33.51)
     end
-    it "raises error if not 3d sphere" do
-      expect{@sph4d.volume}.to raise_error("dimension error")
-    end
   end
 
   describe "#surface_area" do
     it "returns surface_area of sphere" do
       expect(@sph2.surface_area.round(2)).to eq(50.27)
-    end
-    it "raises error if not 3d sphere" do
-      expect{@sph4d.surface_area}.to raise_error("dimension error")
     end
   end
 

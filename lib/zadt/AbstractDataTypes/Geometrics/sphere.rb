@@ -3,11 +3,11 @@ require_relative "hypersphere.rb"
 class Sphere < HyperSphere
 
   def initialize(radius = 1, center = [0,0,0], pct_error = 1)
+    raise "Sphere must be in 3-dimensions" unless center.length == 3
     super(radius, center, pct_error)
   end
 
   def volume
-    dim_check(3)
     Math::PI * (@radius ** 3) * 4.0 / 3.0
   end
 
