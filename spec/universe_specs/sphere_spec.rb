@@ -13,6 +13,9 @@ describe Sphere do
       expect(default_sphere.center.coords).to eq([0,0,0])
     end
     it "raises error if sphere's center is not 3-dimensions" do
+      expect{Sphere.new(2, [1])}.to raise_error("Sphere must be in 3-dimensions")
+      expect{Sphere.new(2, [1,2])}.to raise_error("Sphere must be in 3-dimensions")
+      expect{Sphere.new(2, [1,2,3,4])}.to raise_error("Sphere must be in 3-dimensions")
       expect{Sphere.new(2, [1,2,3,4,5])}.to raise_error("Sphere must be in 3-dimensions")
     end
   end

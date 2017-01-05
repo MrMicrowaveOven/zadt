@@ -29,7 +29,7 @@ describe Circle do
     it "returns equation for basic centered circle" do
       expect(@circle1.equation).to eq("x^2 + y^2 = 4")
     end
-    it "returns equation for uncentered sphere" do
+    it "returns equation for uncentered circle" do
       expect(@circle2.equation).to eq("x^2 + (y - 3)^2 = 4")
     end
   end

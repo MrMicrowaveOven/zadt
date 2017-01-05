@@ -12,6 +12,11 @@ describe HyperSphere do
       expect(default_sphere.radius).to eq(1)
       expect(default_sphere.center.coords).to eq([0,0,0,0])
     end
+    it "can make a 1d hypersphere" do
+      sphere5d = HyperSphere.new(2, [3])
+      expect(sphere5d.radius).to eq(2)
+      expect(sphere5d.center.coords).to eq([3])
+    end
     it "can make a 5d hypersphere" do
       sphere5d = HyperSphere.new(2, [1,2,3,4,5])
       expect(sphere5d.radius).to eq(2)

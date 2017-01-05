@@ -36,7 +36,7 @@ class HyperSphere
 
   def equation
     dims = @center.dims
-    return circle_equation if dims == 2
+    return circle_equation if is_a?(Circle)
     center_point = @center.dup
     # Only get the variables used in that dimension
     coord_names = ("a".."z").to_a.slice(-dims, dims)
