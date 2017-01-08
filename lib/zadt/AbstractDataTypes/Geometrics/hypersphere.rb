@@ -10,14 +10,6 @@ class HyperSphere
     @pct_error = pct_error
   end
 
-  def self.help
-    Sphere.show_help_message
-  end
-
-  def help
-    Sphere.help
-  end
-
   def on?(point)
     Zadt::Universe.distance(@center, point).round(2) == radius.round(2)
   end
@@ -63,10 +55,6 @@ class HyperSphere
 
   def dim_check(num)
     raise "dimension error" unless num == @center.dims
-  end
-
-  def self.show_help_message
-    Zadt::ADT::show_hypersphere_help_message
   end
 
 end

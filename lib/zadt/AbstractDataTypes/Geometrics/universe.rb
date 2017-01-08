@@ -11,14 +11,6 @@ module Zadt
       @objects = []
     end
 
-    def self.help
-      Universe.show_help_message
-    end
-
-    def help
-      Universe.help
-    end
-
     def self.distance(pointa, pointb)
       raise "different dimensions" if pointa.dims != pointb.dims
       coordinate_distances = Array.new
@@ -46,10 +38,6 @@ module Zadt
     def dim_check(point)
       return if !@num_dim
       raise "Wrong number of dimensions" if point.dims != @num_dim
-    end
-
-    def self.show_help_message
-      Zadt::ADT::show_universe_help_message
     end
   end
 end

@@ -9,14 +9,6 @@ module Zadt
       @out = Stack.new
     end
 
-    def self.help
-      Zadt::ADT::show_stackqueue_help_message
-    end
-
-    def help
-      StackQueue.help
-    end
-
     def show
       @out.show.reverse + @in.show
     end

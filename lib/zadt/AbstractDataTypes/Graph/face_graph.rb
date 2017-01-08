@@ -16,15 +16,6 @@ module Zadt
       super
     end
 
-    def self.help
-      FaceGraph.show_help_message
-    end
-
-    def help
-      FaceGraph.help
-    end
-
-
     def add_face(edges_array)
       edge_array_check(edges_array)
       face = Face.new(edges_array)
@@ -124,7 +115,7 @@ module Zadt
       neighbors - [face]
     end
 
-  private
+    private
 
     def vertex_array_check(vertex_array)
       raise "invalid vertex array" unless vertex_array.is_a?(Array)
@@ -156,10 +147,6 @@ module Zadt
     def remove_neighbors(face1, face2)
       face2.remove_neighbor(face1)
       face1.remove_neighbor(face2)
-    end
-
-    def self.show_help_message
-      Zadt::ADT::show_face_graph_help_message
     end
   end
 end

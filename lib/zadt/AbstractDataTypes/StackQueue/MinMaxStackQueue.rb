@@ -10,14 +10,6 @@ module Zadt
       @out = MinMaxStack.new
     end
 
-    def self.help
-      Zadt::ADT::show_minmaxstackqueue_help_message
-    end
-
-    def help
-      MinMaxStackQueue.help
-    end
-
     def show
       @out.show.reverse + @in.show
     end

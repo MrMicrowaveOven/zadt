@@ -6,14 +6,6 @@ class Circle < HyperSphere
     super(radius, center, pct_error)
   end
 
-  def help
-    Circle.help
-  end
-
-  def self.help
-    Circle.show_help_message
-  end
-
   def area
     dim_check(2)
     Math::PI * (@radius ** 2)
@@ -29,11 +21,6 @@ class Circle < HyperSphere
   end
 
   private
-
-  def self.show_help_message
-    super
-    Zadt::ADT::show_circle_help_message
-  end
 
   def circle_equation
     dim_check(2)

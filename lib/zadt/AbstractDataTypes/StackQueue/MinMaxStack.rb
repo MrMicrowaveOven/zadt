@@ -7,14 +7,6 @@ module Zadt
       @values = []
     end
 
-    def self.help
-      Zadt::ADT::show_minmaxstack_help_message
-    end
-
-    def help
-      MinMaxStack.help
-    end
-
     def push(val)
       if @values.empty?
         @values.push([val, val, val])

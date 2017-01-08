@@ -1,5 +1,3 @@
-# require_relative 'vertex.rb'
-# require_relative 'edge.rb'
   class Face
     attr_reader :edges, :vertices
     # Contains

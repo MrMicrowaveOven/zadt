@@ -22,11 +22,6 @@ class Sphere < HyperSphere
 
   private
 
-  def self.show_help_message
-    super
-    Zadt::ADT::show_sphere_help_message
-  end
-
   def close_enough(guess, exact)
     range = Array.new
     range[0] = exact *(100.0 - @pct_error)/100.0

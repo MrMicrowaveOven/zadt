@@ -8,6 +8,26 @@ require_relative 'zadt/HelpModules/HelpMessages/adt_graph_help.rb'
 require_relative 'zadt/HelpModules/HelpMessages/adt_geometrics_help.rb'
 require_relative 'zadt/HelpModules/HelpMessages/adt_linkedlist_help.rb'
 
+
+require_relative 'zadt/HelpModules/Functionality/StackQueue/Queue.rb'
+require_relative 'zadt/HelpModules/Functionality/StackQueue/Stack.rb'
+require_relative 'zadt/HelpModules/Functionality/StackQueue/StackQueue.rb'
+require_relative 'zadt/HelpModules/Functionality/StackQueue/MinMaxStack.rb'
+require_relative 'zadt/HelpModules/Functionality/StackQueue/MinMaxStackQueue.rb'
+
+require_relative 'zadt/HelpModules/Functionality/Geometrics/circle.rb'
+require_relative 'zadt/HelpModules/Functionality/Geometrics/hypersphere.rb'
+require_relative 'zadt/HelpModules/Functionality/Geometrics/point.rb'
+require_relative 'zadt/HelpModules/Functionality/Geometrics/sphere.rb'
+require_relative 'zadt/HelpModules/Functionality/Geometrics/universe.rb'
+
+require_relative 'zadt/HelpModules/Functionality/Graph/face_graph.rb'
+require_relative 'zadt/HelpModules/Functionality/Graph/graph.rb'
+
+require_relative 'zadt/HelpModules/Functionality/LinkedList/LinkedList.rb'
+require_relative 'zadt/HelpModules/Functionality/LinkedList/DoublyLinkedList.rb'
+
+
 require_relative 'zadt/AbstractDataTypes/StackQueue/Stack.rb'
 require_relative 'zadt/AbstractDataTypes/StackQueue/Queue.rb'
 require_relative 'zadt/AbstractDataTypes/StackQueue/StackQueue.rb'

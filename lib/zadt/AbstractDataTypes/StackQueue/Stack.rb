@@ -4,14 +4,6 @@ module Zadt
       @values = Array.new
     end
 
-    def self.help
-      Zadt::ADT::show_stack_help_message
-    end
-
-    def help
-      Stack.help
-    end
-
     def show
       @values
     end
