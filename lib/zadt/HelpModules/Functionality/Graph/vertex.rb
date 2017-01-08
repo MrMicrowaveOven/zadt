@@ -1,3 +1,0 @@
-
-  class Vertex
-  end
