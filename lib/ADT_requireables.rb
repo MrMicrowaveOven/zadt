@@ -2,11 +2,11 @@
 # This is so the client does not have access to these private classes
 # Ex. A client cannot make an edge other than within a graph.
 
-require_relative 'zadt/HelpModules/adt_help.rb'
-require_relative 'zadt/HelpModules/adt_stackqueue_help.rb'
-require_relative 'zadt/HelpModules/adt_graph_help.rb'
-require_relative 'zadt/HelpModules/adt_geometrics_help.rb'
-require_relative 'zadt/HelpModules/adt_linkedlist_help.rb'
+require_relative 'zadt/HelpModules/HelpMessages/adt_help.rb'
+require_relative 'zadt/HelpModules/HelpMessages/adt_stackqueue_help.rb'
+require_relative 'zadt/HelpModules/HelpMessages/adt_graph_help.rb'
+require_relative 'zadt/HelpModules/HelpMessages/adt_geometrics_help.rb'
+require_relative 'zadt/HelpModules/HelpMessages/adt_linkedlist_help.rb'
 
 require_relative 'zadt/AbstractDataTypes/StackQueue/Stack.rb'
 require_relative 'zadt/AbstractDataTypes/StackQueue/Queue.rb'
