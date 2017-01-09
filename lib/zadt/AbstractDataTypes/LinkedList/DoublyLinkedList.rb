@@ -2,6 +2,7 @@ module Zadt
   class DoublyLinkedListNode
     attr_accessor :val
     attr_reader :next, :prev
+
     def initialize(val = nil, next_ = nil)
       @val = val
       if !next_
