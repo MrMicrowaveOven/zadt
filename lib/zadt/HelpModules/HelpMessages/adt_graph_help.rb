@@ -27,5 +27,12 @@ module Zadt
       puts "#find_connection(v1,v2), returns edge connecting two given vertices"
       puts "#is_connected?(v1,v2)"
     end
+
+    def self.show_face_help_message
+      puts "Here are the methods for FaceGraph:"
+      puts "#edges, gets the edges contained within the face"
+      puts "#vertices, gets the vertices contained within the face"
+      puts "#value, gets/sets the value of the face"
+    end
   end
 end

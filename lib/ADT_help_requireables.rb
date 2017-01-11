@@ -19,6 +19,7 @@ require_relative 'zadt/HelpModules/Functionality/Geometrics/universe.rb'
 
 require_relative 'zadt/HelpModules/Functionality/Graph/face_graph.rb'
 require_relative 'zadt/HelpModules/Functionality/Graph/graph.rb'
+require_relative 'zadt/HelpModules/Functionality/Graph/face.rb'
 
 require_relative 'zadt/HelpModules/Functionality/LinkedList/linked_list.rb'
 require_relative 'zadt/HelpModules/Functionality/LinkedList/doubly_linked_list.rb'
