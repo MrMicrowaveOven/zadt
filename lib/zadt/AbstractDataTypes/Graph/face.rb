@@ -1,4 +1,3 @@
-module Zadt
   class Face
     attr_reader :edges, :vertices
     # Contains
@@ -13,8 +12,15 @@ module Zadt
       @value = value
     end
 
-    private
+    def inspect
+      output = "This face contains the following vertices:"
+      output += @vertices.to_s
+      output = "This face contains the following edges:"
+      output += @edges.to_s
+      output
+    end
 
+    private
     def ensure_cyclic(vertices)
       connect_testers = vertices.dup
       connected_vertices = []
@@ -34,4 +40,3 @@ module Zadt
       connected_vertices
     end
   end
-end

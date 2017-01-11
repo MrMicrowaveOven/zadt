@@ -118,5 +118,8 @@ describe Zadt::FaceGraph do
     it "maintains standard Ruby FaceGraph #methods" do
       expect(@facegraph.methods).to include(:add_vertex)
     end
+    it "maintains standard Ruby Face #methods" do
+      expect(@goodface2.methods).to include(:edges)
+    end
   end
 end
