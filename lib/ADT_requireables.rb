@@ -7,6 +7,7 @@ require_relative 'zadt/AbstractDataTypes/StackQueue/Queue.rb'
 require_relative 'zadt/AbstractDataTypes/StackQueue/StackQueue.rb'
 require_relative 'zadt/AbstractDataTypes/StackQueue/MinMaxStack.rb'
 require_relative 'zadt/AbstractDataTypes/StackQueue/MinMaxStackQueue.rb'
+require_relative 'zadt/AbstractDataTypes/StackQueue/Enum.rb'
 
 require_relative 'zadt/AbstractDataTypes/Graph/graph.rb'
 require_relative 'zadt/AbstractDataTypes/Graph/face.rb'
