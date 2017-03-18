@@ -7,6 +7,7 @@ describe Zadt::Enum do
       expect(@enum.values).to eq(["Sun", "Mon", "Tues", "Wed", "Thurs", "Fri", "Sat"])
     end
   end
+
   describe "[]" do
     before :each do
       @enum = Zadt::Enum.new(["Sun", "Mon", "Tues", "Wed", "Thurs", "Fri", "Sat"])
